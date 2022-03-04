@@ -1,0 +1,5 @@
+CalendarDemo #class
+com.axonivy.connector.office365.msgraph.demo #namespace
+user com.microsoft.graph.MicrosoftGraphUser #field
+events java.util.List<com.microsoft.graph.MicrosoftGraphEvent> #field
+newEvent msgraph.connector.NewEvent #field

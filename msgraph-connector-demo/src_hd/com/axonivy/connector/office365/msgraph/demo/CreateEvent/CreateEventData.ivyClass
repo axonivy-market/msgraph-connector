@@ -1,0 +1,6 @@
+CreateEventData #class
+com.axonivy.connector.office365.msgraph.demo.CreateEvent #namespace
+event msgraph.connector.NewEvent #field
+event PERSISTENT #fieldModifier
+participant String #field
+participant PERSISTENT #fieldModifier

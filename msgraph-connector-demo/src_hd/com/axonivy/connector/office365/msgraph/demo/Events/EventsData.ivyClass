@@ -1,0 +1,4 @@
+EventsData #class
+com.axonivy.connector.office365.msgraph.demo.Events #namespace
+events java.util.List<com.microsoft.graph.MicrosoftGraphEvent> #field
+events PERSISTENT #fieldModifier

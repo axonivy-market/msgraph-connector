@@ -1,0 +1,5 @@
+ToDoDemo #class
+com.axonivy.connector.office365.msgraph.demo #namespace
+todo java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask> #field
+task msgraph.connector.NewToDo #field
+task PERSISTENT #fieldModifier

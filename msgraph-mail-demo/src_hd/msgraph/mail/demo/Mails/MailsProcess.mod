@@ -1,9 +1,11 @@
 [Ivy]
-17F263C6C3570D4D 9.3.1 #module
+17F263C6C3570D4D 9.4.1 #module
 >Proto >Proto Collection #zClass
 Ms0 MailsProcess Big #zClass
 Ms0 RD #cInfo
 Ms0 #process
+Ms0 @TextInP .colors .colors #zField
+Ms0 @TextInP color color #zField
 Ms0 @AnnotationInP-0n ai ai #zField
 Ms0 @TextInP .type .type #zField
 Ms0 @TextInP .processKind .processKind #zField

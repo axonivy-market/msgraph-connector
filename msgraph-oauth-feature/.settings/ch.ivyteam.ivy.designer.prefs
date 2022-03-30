@@ -1,0 +1,4 @@
+ch.ivyteam.ivy.designer.preferences.DataClassPreferencePage\:DEFAULT_DATA_CLASS=msgraph.oauth.feature.Data
+ch.ivyteam.ivy.designer.preferences.DataClassPreferencePage\:DEFAULT_NAMESPACE=msgraph.oauth.feature
+ch.ivyteam.ivy.project.preferences\:PROJECT_VERSION=94000
+eclipse.preferences.version=1

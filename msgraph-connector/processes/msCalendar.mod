@@ -1,9 +1,11 @@
 [Ivy]
-1783A266998C4015 9.3.1 #module
+1783A266998C4015 9.4.1 #module
 >Proto >Proto Collection #zClass
 mr0 msCalendar Big #zClass
 mr0 B #cInfo
 mr0 #process
+mr0 @TextInP .colors .colors #zField
+mr0 @TextInP color color #zField
 mr0 @AnnotationInP-0n ai ai #zField
 mr0 @TextInP .type .type #zField
 mr0 @TextInP .processKind .processKind #zField
@@ -155,10 +157,7 @@ mr0 f18 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>Creates a personal meeting:
-check your calendar!</name>
-        <nameStyle>28,5
-20,5,0
-</nameStyle>
+**check your calendar!**</name>
     </language>
 </elementInfo>
 ' #txt

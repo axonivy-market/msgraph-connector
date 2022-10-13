@@ -1,8 +1,10 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "17F263C6C3570D4D",
-  "data" : "msgraph.mail.demo.Mails.MailsData",
   "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "msgraph.mail.demo.Mails.MailsData"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "HtmlDialogStart",

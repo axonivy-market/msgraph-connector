@@ -1,7 +1,9 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "17F262FCF88E26A2",
-  "data" : "msgraph.mail.demo.MailDemo",
+  "config" : {
+    "data" : "msgraph.mail.demo.MailDemo"
+  },
   "elements" : [ {
       "id" : "f5",
       "type" : "RequestStart",

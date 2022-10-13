@@ -1,7 +1,9 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "176D21535A8FEE20",
-  "data" : "msgraph.calendar.demo.CalendarDemo",
+  "config" : {
+    "data" : "msgraph.calendar.demo.CalendarDemo"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "RequestStart",

@@ -1,8 +1,10 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "1783A70465BF19F8",
-  "data" : "msgraph.calendar.demo.CreateEvent.CreateEventData",
   "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "msgraph.calendar.demo.CreateEvent.CreateEventData"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "HtmlDialogStart",

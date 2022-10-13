@@ -1,9 +1,11 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "17844DC635AF15F4",
-  "data" : "msgraph.connector.ToDoData",
   "kind" : "CALLABLE_SUB",
   "description" : "Reads and creates todo tasks.",
+  "config" : {
+    "data" : "msgraph.connector.ToDoData"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",

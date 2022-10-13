@@ -1,7 +1,9 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "176F208BF8721ECC",
-  "data" : "msgraph.todo.demo.ToDoDemo",
+  "config" : {
+    "data" : "msgraph.todo.demo.ToDoDemo"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "RequestStart",

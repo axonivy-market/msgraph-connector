@@ -1,9 +1,11 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "1783A266998C4015",
-  "data" : "msgraph.connector.CalendarData",
   "kind" : "CALLABLE_SUB",
   "description" : "Reads events from your calendar and creates new ones.",
+  "config" : {
+    "data" : "msgraph.connector.CalendarData"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",

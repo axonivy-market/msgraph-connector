@@ -1,7 +1,9 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "17F40684A56F5FEF",
-  "data" : "com.axonivy.connector.office365.test.Data",
+  "config" : {
+    "data" : "com.axonivy.connector.office365.test.Data"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "RequestStart",

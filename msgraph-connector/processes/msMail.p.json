@@ -1,9 +1,11 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "1783B782896F7AC3",
-  "data" : "msgraph.connector.MailData",
   "kind" : "CALLABLE_SUB",
   "description" : "Sends mails.",
+  "config" : {
+    "data" : "msgraph.connector.MailData"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",

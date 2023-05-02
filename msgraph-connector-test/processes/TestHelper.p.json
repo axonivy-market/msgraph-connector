@@ -36,7 +36,11 @@
       "type" : "Script",
       "config" : {
         "output" : {
-          "code" : "ivy.task.getApplication().setActiveEnvironment(in.environment);"
+          "code" : [
+            "import com.microsoft.graph.GraphTestClient;",
+            "",
+            "GraphTestClient.mockForApp(ivy.task.getApplication());"
+          ]
         }
       },
       "visual" : {

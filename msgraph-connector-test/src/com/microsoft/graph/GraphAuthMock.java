@@ -17,11 +17,15 @@ import org.apache.commons.io.IOUtils;
 
 import io.swagger.v3.oas.annotations.Hidden;
 
-@Path("graphAuthMock")
+@Path(GraphAuthMock.PATH_SUFFIX)
 @PermitAll
 @Hidden
 public class GraphAuthMock
 {
+  static final String PATH_SUFFIX = "graphAuthMock";
+  // URI where this mock can be reached: to be referenced in tests that use it!
+  public static final String URI = "{ivy.app.baseurl}/api/" + PATH_SUFFIX;
+
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   @Path("authorize")
@@ -30,7 +34,7 @@ public class GraphAuthMock
     return Response.status(301)
             .build();
   }
-  
+
   @POST
   @Path("token")
   @Produces(MediaType.APPLICATION_JSON)
@@ -41,7 +45,7 @@ public class GraphAuthMock
       .entity(load("json/accessToken.json"))
       .build();
   }
-  
+
   private static String load(String path)
   {
     try(InputStream is = GraphAuthMock.class.getResourceAsStream(path))

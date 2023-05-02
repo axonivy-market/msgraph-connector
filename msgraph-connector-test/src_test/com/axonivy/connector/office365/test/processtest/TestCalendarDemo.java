@@ -4,15 +4,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.microsoft.graph.GraphTestClient;
 import com.microsoft.graph.MicrosoftGraphEvent;
 
+import ch.ivyteam.ivy.application.IApplication;
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
-import ch.ivyteam.ivy.environment.AppFixture;
 import ch.ivyteam.ivy.security.ISession;
 import msgraph.calendar.demo.CalendarDemo;
 import msgraph.connector.NewEvent;
@@ -20,10 +22,13 @@ import msgraph.connector.NewEvent;
 @IvyProcessTest
 class TestCalendarDemo {
 
-  @Test
-  void readPersonal(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
+  @BeforeEach
+  void mockService(IApplication app) {
+    GraphTestClient.mockForApp(app);
+  }
 
+  @Test
+  void readPersonal(BpmClient bpmClient, ISession session) {
     bpmClient.mock()
             .element(BpmElement.pid("176D21535A8FEE20-f20"))
             .withNoAction();
@@ -41,9 +46,7 @@ class TestCalendarDemo {
   }
 
   @Test
-  void createMeeting(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
-
+  void createMeeting(BpmClient bpmClient, ISession session) {
     mockMeetingUi(bpmClient);
 
     ExecutionResult result = bpmClient.start()

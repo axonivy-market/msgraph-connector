@@ -9,13 +9,13 @@ import org.junit.jupiter.api.Test;
 
 import com.axonivy.wf.ext.notification.NewTaskAssignmentListener;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.microsoft.graph.GraphFixture;
 import com.microsoft.graph.GraphServiceMock;
-import com.microsoft.graph.GraphTestClient;
 
-import ch.ivyteam.ivy.application.IApplication;
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
+import ch.ivyteam.ivy.environment.AppFixture;
 import ch.ivyteam.ivy.security.ISession;
 import ch.ivyteam.ivy.workflow.IWorkflowManager;
 import msgraph.teams.notification.TeamsNotifier;
@@ -24,8 +24,8 @@ import msgraph.teams.notification.TeamsNotifier;
 class TestTeamsNotificationDemo {
 
   @BeforeEach
-  void mockService(IApplication app) {
-    GraphTestClient.mockForApp(app);
+  void mockService(AppFixture fixture) {
+    GraphFixture.apply(fixture);
   }
 
   @Test

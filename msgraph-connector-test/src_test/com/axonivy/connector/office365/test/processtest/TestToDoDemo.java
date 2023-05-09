@@ -5,14 +5,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.microsoft.graph.GraphTestClient;
+import com.microsoft.graph.GraphFixture;
 import com.microsoft.graph.MicrosoftGraphTodoTask;
 
-import ch.ivyteam.ivy.application.IApplication;
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
+import ch.ivyteam.ivy.environment.AppFixture;
 import ch.ivyteam.ivy.security.ISession;
 import msgraph.connector.NewToDo;
 import msgraph.todo.demo.ToDoDemo;
@@ -21,8 +21,8 @@ import msgraph.todo.demo.ToDoDemo;
 public class TestToDoDemo {
 
   @BeforeEach
-  void mockService(IApplication app) {
-    GraphTestClient.mockForApp(app);
+  void mockService(AppFixture fixture) {
+    GraphFixture.apply(fixture);
   }
 
   @Test

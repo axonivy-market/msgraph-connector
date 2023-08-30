@@ -1,5 +1,6 @@
 package com.microsoft.graph;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -25,12 +26,16 @@ import com.google.common.base.Objects;
 import ch.ivyteam.ivy.bpm.error.BpmError;
 import io.swagger.v3.oas.annotations.Hidden;
 
-@Path("graphMock")
+@Path(GraphServiceMock.PATH_SUFFIX)
 @PermitAll
 @Hidden
 @SuppressWarnings("unused")
 public class GraphServiceMock
 {
+  static final String PATH_SUFFIX = "graphMock";
+  // URI where this mock can be reached: to be referenced in tests that use it!
+  public static final String URI = "{ivy.app.baseurl}/api/" + PATH_SUFFIX;
+
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   @Path("me")
@@ -151,11 +156,12 @@ public class GraphServiceMock
     @PathParam("parent-id") String parentId,
     @PathParam("filename") String fileName,
     byte[] payload
-  )
+  ) throws IOException
   {
     var item = new MicrosoftGraphDriveItem();
     item.setName(fileName);
-    item.setContent(IOUtils.toString(payload, StandardCharsets.UTF_8.name()));
+    String content = IOUtils.toString(new ByteArrayInputStream(payload), StandardCharsets.UTF_8);
+    item.setContent(content);
     return Response.ok()
       .entity(item)
       .build();

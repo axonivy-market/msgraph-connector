@@ -4,7 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.microsoft.graph.GraphFixture;
 
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
@@ -17,9 +20,13 @@ import msgraph.connector.NewMail;
 @IvyProcessTest
 class TestMailDemo {
 
+  @BeforeEach
+  void mockService(AppFixture fixture) {
+    GraphFixture.apply(fixture);
+  }
+
   @Test
-  void writeMail(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
+  void writeMail(BpmClient bpmClient, ISession session) {
     mockMailUi(bpmClient);
 
     ExecutionResult result = bpmClient.start()

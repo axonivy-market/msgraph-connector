@@ -2,8 +2,10 @@ package com.axonivy.connector.office365.test.processtest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.microsoft.graph.GraphFixture;
 import com.microsoft.graph.MicrosoftGraphTodoTask;
 
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
@@ -18,10 +20,13 @@ import msgraph.todo.demo.ToDoDemo;
 @IvyProcessTest
 public class TestToDoDemo {
 
-  @Test
-  public void readList(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
+  @BeforeEach
+  void mockService(AppFixture fixture) {
+    GraphFixture.apply(fixture);
+  }
 
+  @Test
+  public void readList(BpmClient bpmClient, ISession session) {
     bpmClient.mock()
             .element(BpmElement.pid("176F208BF8721ECC-f6"))
             .withNoAction();
@@ -39,8 +44,7 @@ public class TestToDoDemo {
   }
 
   @Test
-  public void createTask(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
+  public void createTask(BpmClient bpmClient, ISession session) {
     mockTaskUi(bpmClient);
 
     ExecutionResult result = bpmClient.start()

@@ -4,10 +4,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Deque;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.wf.ext.notification.NewTaskAssignmentListener;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.microsoft.graph.GraphFixture;
 import com.microsoft.graph.GraphServiceMock;
 
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
@@ -21,10 +23,13 @@ import msgraph.teams.notification.TeamsNotifier;
 @IvyProcessTest
 class TestTeamsNotificationDemo {
 
-  @Test
-  void createTask(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
+  @BeforeEach
+  void mockService(AppFixture fixture) {
+    GraphFixture.apply(fixture);
+  }
 
+  @Test
+  void createTask(BpmClient bpmClient, ISession session) {
     IWorkflowManager wfMan = IWorkflowManager.instance();
     NewTaskAssignmentListener notify = new TeamsNotifier();
     wfMan.addWorkflowListener(notify);

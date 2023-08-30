@@ -4,8 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.microsoft.graph.GraphFixture;
 import com.microsoft.graph.MicrosoftGraphEvent;
 
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
@@ -20,10 +22,13 @@ import msgraph.connector.NewEvent;
 @IvyProcessTest
 class TestCalendarDemo {
 
-  @Test
-  void readPersonal(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
+  @BeforeEach
+  void mockService(AppFixture fixture) {
+    GraphFixture.apply(fixture);
+  }
 
+  @Test
+  void readPersonal(BpmClient bpmClient, ISession session) {
     bpmClient.mock()
             .element(BpmElement.pid("176D21535A8FEE20-f20"))
             .withNoAction();
@@ -41,9 +46,7 @@ class TestCalendarDemo {
   }
 
   @Test
-  void createMeeting(BpmClient bpmClient, ISession session, AppFixture fixture) {
-    fixture.environment("dev-axonivy");
-
+  void createMeeting(BpmClient bpmClient, ISession session) {
     mockMeetingUi(bpmClient);
 
     ExecutionResult result = bpmClient.start()

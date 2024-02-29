@@ -32,3 +32,9 @@ Variables:
     # you may exclude or add some, as your azure administrator allows or restricts them.
     # for sharepoint-demos, the following must be added: Sites.Read.All Files.ReadWrite
     permissions: "user.read Calendars.ReadWrite mail.readWrite mail.send Tasks.ReadWrite Chat.Read offline_access"
+    
+    # this property specifies the library used to create and manage HTTP connections for Jersey client. 
+    # it sets the connection provider class for the Jersey client.
+    # while the default provider works well for most methods, if you specifically need to use the PATCH method, consider switching the provider to:
+    #   org.glassfish.jersey.apache.connector.ApacheConnectorProvider
+    httpClientLibrary: "org.glassfish.jersey.client.HttpUrlConnectorProvider"

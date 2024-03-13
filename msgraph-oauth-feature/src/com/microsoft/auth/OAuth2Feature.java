@@ -46,7 +46,7 @@ public class OAuth2Feature implements Feature{
     String SCOPE = "AUTH.scope";
     String AUTH_BASE_URI = "AUTH.baseUri";
     String USE_APP_PERMISSIONS = "AUTH.useAppPermissions";
-    String USE_USER_PASS_FLOW = "AUTH.userPassFlow";
+    String USE_USER_PASS_FLOW = "AUTH.useUserPassFlow";
 
     String USER = "AUTH.user";
     String PASS = "AUTH.password";

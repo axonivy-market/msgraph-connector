@@ -90,7 +90,7 @@ public class TestOAuth2Feature {
     Map<String, Object> props = Map.of(
       "AUTH.appId", "1234",
       "AUTH.secretKey", "5678",
-      "AUTH.userPassFlow", Boolean.TRUE.toString(),
+      "AUTH.useUserPassFlow", Boolean.TRUE.toString(),
       "AUTH.user", "rew",
       "AUTH.password", "notMySecret");
     var payload = toPayload(props);

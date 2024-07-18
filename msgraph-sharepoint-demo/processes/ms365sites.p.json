@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "184A3B417FB584E7",
   "config" : {
     "data" : "msgraph.sites.demo.Data"
@@ -9,13 +9,14 @@
       "type" : "RequestStart",
       "name" : "mySites.ivp",
       "config" : {
-        "callSignature" : "mySites",
-        "outLink" : "mySites.ivp"
+        "signature" : "mySites"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -27,49 +28,56 @@
       "type" : "RestClientCall",
       "name" : "log sites",
       "config" : {
-        "path" : "/me/followedSites",
-        "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "queryParams" : {
-          "$top" : "",
-          "$skip" : "",
-          "$search" : "",
-          "$filter" : "",
-          "$count" : "",
-          "$orderby" : "",
-          "$select" : "",
-          "$expand" : ""
+        "target" : {
+          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "path" : "/me/followedSites",
+          "queryParams" : {
+            "$top" : "",
+            "$skip" : "",
+            "$search" : "",
+            "$filter" : "",
+            "$count" : "",
+            "$orderby" : "",
+            "$select" : "",
+            "$expand" : ""
+          }
         },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.mySites" : "result.value"
-        },
-        "resultType" : "com.microsoft.graph.MicrosoftGraphSiteCollectionResponse",
-        "responseCode" : [
-          "import com.microsoft.graph.MicrosoftGraphSite;",
-          "",
-          "for(MicrosoftGraphSite site : result.value){",
-          "  ivy.log.info(\"you are following: \"+site.displayName+\" (\"+site.sharepointIds.siteId+\")\");",
-          "}"
-        ]
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphSiteCollectionResponse",
+            "map" : {
+              "out.mySites" : "result.value"
+            },
+            "code" : [
+              "import com.microsoft.graph.MicrosoftGraphSite;",
+              "",
+              "for(MicrosoftGraphSite site : result.value){",
+              "  ivy.log.info(\"you are following: \"+site.displayName+\" (\"+site.sharepointIds.siteId+\")\");",
+              "}"
+            ]
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 224, "y" : 64 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     }, {
       "id" : "f5",
       "type" : "RequestStart",
       "name" : "upload.ivp",
       "config" : {
-        "callSignature" : "upload",
-        "outLink" : "upload.ivp"
+        "signature" : "upload"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 184 }
       },
-      "connect" : { "id" : "f8", "to" : "f7" }
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
     }, {
       "id" : "f6",
       "type" : "TaskEnd",
@@ -95,7 +103,9 @@
       "visual" : {
         "at" : { "x" : 224, "y" : 184 }
       },
-      "connect" : { "id" : "f11", "to" : "f10" }
+      "connect" : [
+        { "id" : "f11", "to" : "f10" }
+      ]
     }, {
       "id" : "f10",
       "type" : "SubProcessCall",
@@ -103,9 +113,6 @@
       "config" : {
         "processCall" : "msFiles:uploadFile(java.io.File)",
         "call" : {
-          "params" : [
-            { "name" : "file", "type" : "java.io.File" }
-          ],
           "map" : {
             "param.file" : "in.file.getJavaFile()"
           }
@@ -115,19 +122,22 @@
         "at" : { "x" : 384, "y" : 184 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f9", "to" : "f6" }
+      "connect" : [
+        { "id" : "f9", "to" : "f6" }
+      ]
     }, {
       "id" : "f12",
       "type" : "RequestStart",
       "name" : "recentFiles.ivp",
       "config" : {
-        "callSignature" : "recentFiles",
-        "outLink" : "recentFiles.ivp"
+        "signature" : "recentFiles"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 288 }
       },
-      "connect" : { "id" : "f14", "to" : "f13" }
+      "connect" : [
+        { "id" : "f14", "to" : "f13" }
+      ]
     }, {
       "id" : "f15",
       "type" : "TaskEnd",
@@ -154,6 +164,8 @@
         "at" : { "x" : 288, "y" : 288 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f16", "to" : "f15" }
+      "connect" : [
+        { "id" : "f16", "to" : "f15" }
+      ]
     } ]
 }

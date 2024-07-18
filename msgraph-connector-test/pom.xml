@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.axonivy.connector.office365</groupId>
   <artifactId>msgraph-connector-test</artifactId>
   <version>10.0.7-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
-  
   <properties>
     <tester.version>10.0.14</tester.version>
   </properties>
-  
   <dependencies>
     <dependency>
       <groupId>com.axonivy.ivy.test</groupId>
@@ -54,7 +53,15 @@
       <type>iar</type>
     </dependency>
   </dependencies>
-  
+  <repositories>
+    <repository>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+  </repositories>
   <pluginRepositories>
     <pluginRepository>
       <snapshots>
@@ -64,16 +71,6 @@
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </pluginRepository>
   </pluginRepositories>
-  <repositories>
-    <repository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
-  
   <build>
     <testSourceDirectory>src_test</testSourceDirectory>
     <pluginManagement>
@@ -86,71 +83,75 @@
           </configuration>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <executions>
-          <execution>
-            <id>oauth2-test</id>
-            <phase>test</phase>
-            <goals><goal>test</goal></goals>
-            <configuration>
-              <includes>
-                <include>**/RestOauthIvyTest.java</include>
-              </includes>
-            </configuration>
-          </execution>
-          <execution>
-            <id>default-test</id>
-            <configuration>
-              <excludes>
-                <exclude>**/RestOauthIvyTest.java</exclude>
-              </excludes>
-            </configuration>
-          </execution>
+            <execution>
+              <id>oauth2-test</id>
+              <phase>test</phase>
+              <goals>
+                <goal>test</goal>
+              </goals>
+              <configuration>
+                <includes>
+                  <include>**/RestOauthIvyTest.java</include>
+                </includes>
+              </configuration>
+            </execution>
+            <execution>
+              <id>default-test</id>
+              <configuration>
+                <excludes>
+                  <exclude>**/RestOauthIvyTest.java</exclude>
+                </excludes>
+              </configuration>
+            </execution>
           </executions>
         </plugin>
         <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <executions>
-        <execution>
-          <id>oauth-integration-test</id>
-            <phase>integration-test</phase>
-            <goals><goal>integration-test</goal></goals>
-            <configuration>
-              <includes>
-                <include>**/WebTestOauth2LoginRedirectIT.java</include>
-              </includes>
-            </configuration>
-          </execution>
-          <execution>
-            <id>default-integration-test</id>
-            <phase>never</phase>
-            <configuration>
-              <excludes>
-                <exclude>**/WebTestOauth2LoginRedirectIT.java</exclude>
-              </excludes>
-            </configuration>
-          </execution>
-          <execution>
-            <id>replaced-default-integration-test</id>
-            <phase>integration-test</phase><!-- run after oauth2 tests -->
-            <goals><goal>integration-test</goal></goals>
-            <configuration>
-              <excludes>
-                <exclude>**/WebTestOauth2LoginRedirectIT.java</exclude>
-              </excludes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>oauth-integration-test</id>
+              <phase>integration-test</phase>
+              <goals>
+                <goal>integration-test</goal>
+              </goals>
+              <configuration>
+                <includes>
+                  <include>**/WebTestOauth2LoginRedirectIT.java</include>
+                </includes>
+              </configuration>
+            </execution>
+            <execution>
+              <id>default-integration-test</id>
+              <phase>never</phase>
+              <configuration>
+                <excludes>
+                  <exclude>**/WebTestOauth2LoginRedirectIT.java</exclude>
+                </excludes>
+              </configuration>
+            </execution>
+            <execution>
+              <id>replaced-default-integration-test</id>
+              <phase>integration-test</phase>
+              <goals>
+                <goal>integration-test</goal>
+              </goals>
+              <configuration>
+                <excludes>
+                  <exclude>**/WebTestOauth2LoginRedirectIT.java</exclude>
+                </excludes>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
-        <version>10.0.14</version>
+        <version>11.3.0</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>

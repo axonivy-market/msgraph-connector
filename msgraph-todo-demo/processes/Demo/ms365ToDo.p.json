@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "176F208BF8721ECC",
   "config" : {
     "data" : "msgraph.todo.demo.ToDoDemo"
@@ -9,15 +9,18 @@
       "type" : "RequestStart",
       "name" : "myToDo.ivp",
       "config" : {
-        "callSignature" : "myToDo",
-        "outLink" : "myToDo.ivp",
-        "tags" : "demo"
+        "signature" : "myToDo"
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 18, "y" : 37 }
       },
-      "connect" : { "id" : "f4", "to" : "f14" }
+      "connect" : [
+        { "id" : "f4", "to" : "f14" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -29,14 +32,15 @@
       "type" : "RequestStart",
       "name" : "createTask.ivp",
       "config" : {
-        "callSignature" : "createTask",
-        "outLink" : "createTask.ivp"
+        "signature" : "createTask"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 224 },
         "labelOffset" : { "x" : 17, "y" : 41 }
       },
-      "connect" : { "id" : "f12", "to" : "f11" }
+      "connect" : [
+        { "id" : "f12", "to" : "f11" }
+      ]
     }, {
       "id" : "f8",
       "type" : "TaskEnd",
@@ -60,43 +64,40 @@
         "at" : { "x" : 224, "y" : 64 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f9", "to" : "f6" }
+      "connect" : [
+        { "id" : "f9", "to" : "f6" }
+      ]
     }, {
       "id" : "f2",
       "type" : "SubProcessCall",
       "name" : "Create new Task",
       "config" : {
         "processCall" : "msToDo:createNewTask(msgraph.connector.NewToDo)",
+        "call" : {
+          "map" : {
+            "param.task" : "in.task"
+          }
+        },
         "output" : {
           "map" : {
             "out" : "in",
             "out.todo" : "[ result.todo ]"
-          }
-        },
-        "call" : {
-          "params" : [
-            { "name" : "task", "type" : "msgraph.connector.NewToDo" }
-          ],
-          "map" : {
-            "param.task" : "in.task"
           }
         }
       },
       "visual" : {
         "at" : { "x" : 384, "y" : 224 }
       },
-      "connect" : { "id" : "f5", "to" : "f8" }
+      "connect" : [
+        { "id" : "f5", "to" : "f8" }
+      ]
     }, {
       "id" : "f6",
       "type" : "DialogCall",
       "name" : "Tasks",
       "config" : {
-        "dialogId" : "msgraph.todo.demo.Tasks",
-        "startMethod" : "start(java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>)",
+        "dialog" : "msgraph.todo.demo.Tasks:start(java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>)",
         "call" : {
-          "params" : [
-            { "name" : "todo", "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>" }
-          ],
           "map" : {
             "param.todo" : "in.todo"
           }
@@ -105,14 +106,15 @@
       "visual" : {
         "at" : { "x" : 384, "y" : 64 }
       },
-      "connect" : { "id" : "f10", "to" : "f1" }
+      "connect" : [
+        { "id" : "f10", "to" : "f1" }
+      ]
     }, {
       "id" : "f11",
       "type" : "DialogCall",
       "name" : "CreateTask",
       "config" : {
-        "dialogId" : "msgraph.todo.demo.CreateTask",
-        "startMethod" : "start()",
+        "dialog" : "msgraph.todo.demo.CreateTask:start()",
         "output" : {
           "map" : {
             "out" : "in",
@@ -123,6 +125,8 @@
       "visual" : {
         "at" : { "x" : 224, "y" : 224 }
       },
-      "connect" : { "id" : "f3", "to" : "f2" }
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
     } ]
 }

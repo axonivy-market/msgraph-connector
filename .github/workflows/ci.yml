@@ -8,6 +8,6 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v3
+    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v4
     secrets:
       mvnArgs: -Dtest.azure.app.id=${{ secrets.AZURE_APP_ID }} -Dtest.azure.app.secretKey=${{ secrets.AZURE_APP_SECRET }} -Dtest.azure.app.tenantId=${{ secrets.AZURE_APP_TENANT_ID }} -Dtest.azure.webtest.username=${{ secrets.AZURE_APP_USER_NAME }} -Dtest.azure.webtest.pass=${{ secrets.AZURE_APP_USER_PASS }} 

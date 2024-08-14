@@ -4,8 +4,8 @@ Konnektor integriert Microsoft Outlook Kalenderfunktionen in deine Axon Ivy Gesc
 
 Dieser Konnektor:
 
-- Ist Teil der Microsoft Graph REST API.
-- Ermöglicht Entwicklern mit geringem Programmieraufwand die Erweiterung bestehender Geschäftsprozesse mit Featuren von Microsoft Office Kalender
+- ist Teil der Microsoft Graph REST API.
+- ermöglicht Entwicklern mit geringem Programmieraufwand die Erweiterung bestehender Axon Ivy Geschäftsprozesse mit Featuren von Microsoft Office Kalender
 
 ## Demo
 

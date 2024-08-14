@@ -9,5 +9,5 @@ This connector:
 
 ## Demo
 
-![demo-calendar](doc/img/demo_calendarv2.png)
+![demo-calendar](doc/img/demo_calendar.png)
 

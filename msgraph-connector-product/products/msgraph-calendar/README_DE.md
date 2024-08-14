@@ -1,4 +1,4 @@
-# Microsoft 365 Kalender Konnektor
+# Microsoft 365 Kalender
 Axon Ivy’s [Microsoft Outlook Calendar API](https://docs.microsoft.com/en-us/graph/outlook-calendar-concept-overview)
 Konnektor integriert Microsoft Outlook Kalenderfunktionen in deine Axon Ivy Geschäftsprozesse. 
 

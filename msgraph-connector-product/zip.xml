@@ -35,5 +35,9 @@
       <source>${project.build.directory}/README.md</source>
       <destName>README.md</destName>
     </file>
+    <file>
+      <source>${project.build.directory}/README_DE.md</source>
+      <destName>README_DE.md</destName>
+    </file>
   </files>
 </assembly>

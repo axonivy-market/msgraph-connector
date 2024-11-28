@@ -1,6 +1,0 @@
-WriteMailData #class
-msgraph.mail.demo.WriteMail #namespace
-mail msgraph.connector.NewMail #field
-mail PERSISTENT #fieldModifier
-receiver String #field
-receiver PERSISTENT #fieldModifier

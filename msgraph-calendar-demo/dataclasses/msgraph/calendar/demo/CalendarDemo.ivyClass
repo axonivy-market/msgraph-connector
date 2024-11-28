@@ -1,8 +1,0 @@
-CalendarDemo #class
-msgraph.calendar.demo #namespace
-user com.microsoft.graph.MicrosoftGraphUser #field
-user PERSISTENT #fieldModifier
-events java.util.List<com.microsoft.graph.MicrosoftGraphEvent> #field
-events PERSISTENT #fieldModifier
-newEvent msgraph.connector.NewEvent #field
-newEvent PERSISTENT #fieldModifier

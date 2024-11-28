@@ -1,8 +1,0 @@
-Data #class
-com.axonivy.connector.office365.test #namespace
-environment String #field
-environment PERSISTENT #fieldModifier
-displayName String #field
-displayName PERSISTENT #fieldModifier
-mail String #field
-mail PERSISTENT #fieldModifier

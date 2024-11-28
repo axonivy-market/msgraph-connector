@@ -1,0 +1,15 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "CreateEventData",
+  "namespace" : "msgraph.calendar.demo.CreateEvent",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "event",
+    "type" : "msgraph.connector.NewEvent",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "participant",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

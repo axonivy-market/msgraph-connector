@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "EventsData",
+  "namespace" : "msgraph.calendar.demo.Events",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "events",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphEvent>",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

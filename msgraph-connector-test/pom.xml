@@ -7,8 +7,8 @@
   <packaging>iar-integration-test</packaging>
   
   <properties>
-    <project.build.plugin.version>10.0.16</project.build.plugin.version>
-    <tester.version>10.0.14</tester.version>
+    <project.build.plugin.version>12.0.0</project.build.plugin.version>
+    <tester.version>12.0.0</tester.version>
   </properties>
   
   <dependencies>

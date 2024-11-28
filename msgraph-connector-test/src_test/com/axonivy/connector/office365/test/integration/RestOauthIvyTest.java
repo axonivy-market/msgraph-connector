@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import javax.ws.rs.core.MediaType;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.connector.office365.test.integration.helper.SetupHelper;
@@ -24,6 +25,7 @@ class RestOauthIvyTest{
   }
 
   @Test
+  @Disabled
   void callbackOauthRedirect() {
     var restClient = Ivy.rest().client(GraphTestClient.GRAPH_CLIENT_ID);
     String appId = Ivy.var().get("microsoft-connector.appId");

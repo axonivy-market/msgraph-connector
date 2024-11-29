@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "1783A70465BF19F8",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -10,19 +10,19 @@
       "type" : "HtmlDialogStart",
       "name" : "start()",
       "config" : {
-        "callSignature" : "start",
-        "result" : {
-          "params" : [
-            { "name" : "event", "type" : "msgraph.connector.NewEvent" }
-          ],
-          "map" : {
-            "result.event" : "in.event"
-          }
-        },
+        "signature" : "start",
         "input" : {
           "map" : {
             "out.event.description" : "\"Let's identifiy weakly automated processes and plan their optimization.\"",
             "out.event.subject" : "\"Define digitalization roadmap\""
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "event", "type" : "msgraph.connector.NewEvent", "desc" : "" }
+          ],
+          "map" : {
+            "result.event" : "in.event"
           }
         },
         "guid" : "1783A70466B1148A"
@@ -30,7 +30,9 @@
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     }, {
       "id" : "f1",
       "type" : "HtmlDialogEnd",
@@ -47,7 +49,9 @@
       "visual" : {
         "at" : { "x" : 96, "y" : 160 }
       },
-      "connect" : { "id" : "f5", "to" : "f4" }
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
     }, {
       "id" : "f4",
       "type" : "HtmlDialogExit",
@@ -70,7 +74,9 @@
       "visual" : {
         "at" : { "x" : 96, "y" : 256 }
       },
-      "connect" : { "id" : "f8", "to" : "f7" }
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
     }, {
       "id" : "f7",
       "type" : "HtmlDialogEnd",
@@ -97,6 +103,8 @@
         "at" : { "x" : 96, "y" : 352 },
         "labelOffset" : { "x" : 19, "y" : 35 }
       },
-      "connect" : { "id" : "f11", "to" : "f9" }
+      "connect" : [
+        { "id" : "f11", "to" : "f9" }
+      ]
     } ]
 }

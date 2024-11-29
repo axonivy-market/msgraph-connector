@@ -1,6 +1,0 @@
-ToDoDemo #class
-msgraph.todo.demo #namespace
-todo java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask> #field
-todo PERSISTENT #fieldModifier
-task msgraph.connector.NewToDo #field
-task PERSISTENT #fieldModifier

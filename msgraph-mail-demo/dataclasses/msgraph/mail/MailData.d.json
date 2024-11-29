@@ -1,0 +1,13 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "MailData",
+  "namespace" : "msgraph.mail",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "mail",
+    "type" : "msgraph.connector.NewMail"
+  }, {
+    "name" : "message",
+    "type" : "com.microsoft.graph.MicrosoftGraphMessage"
+  } ]
+}

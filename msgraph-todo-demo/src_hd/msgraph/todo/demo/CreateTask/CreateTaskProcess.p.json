@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "178453C7286728D9",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -10,19 +10,19 @@
       "type" : "HtmlDialogStart",
       "name" : "start()",
       "config" : {
-        "callSignature" : "start",
-        "result" : {
-          "params" : [
-            { "name" : "task", "type" : "msgraph.connector.NewToDo" }
-          ],
-          "map" : {
-            "result.task" : "in.task"
-          }
-        },
+        "signature" : "start",
         "input" : {
           "map" : {
             "out.task.content" : "\"It has never been easier to enroll onto a successful digitalization journey.\\nDon't miss this opportunity: https://www.axonivy.com\"",
             "out.task.title" : "\"Digitalize your business\""
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "task", "type" : "msgraph.connector.NewToDo", "desc" : "" }
+          ],
+          "map" : {
+            "result.task" : "in.task"
           }
         },
         "guid" : "178453C7288C9EF9"
@@ -30,7 +30,9 @@
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     }, {
       "id" : "f1",
       "type" : "HtmlDialogEnd",
@@ -47,7 +49,9 @@
       "visual" : {
         "at" : { "x" : 96, "y" : 160 }
       },
-      "connect" : { "id" : "f5", "to" : "f4" }
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
     }, {
       "id" : "f4",
       "type" : "HtmlDialogExit",

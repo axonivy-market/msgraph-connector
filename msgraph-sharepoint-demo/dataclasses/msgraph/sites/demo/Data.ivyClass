@@ -1,4 +1,0 @@
-Data #class
-msgraph.sites.demo #namespace
-mySites java.util.List<com.microsoft.graph.MicrosoftGraphSite> #field
-file File #field

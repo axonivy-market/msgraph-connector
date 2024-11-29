@@ -1,6 +1,5 @@
 package com.microsoft.graph;
 
-import java.util.ArrayList;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,18 +34,14 @@ public class GraphTestClient {
       .toBuilder()
       .uri(GraphServiceMock.URI)
       .feature(CsrfHeaderFeature.class.getName())
+      .removeFeature(OAuth2Feature.class.getName())
       .property("AUTH.baseUri", GraphAuthMock.URI)
       .property("AUTH.secretKey", "1")
       .property("scope", "user.read calendars.read")
       .toRestClient();
 
-    var features = new ArrayList<>(graphMock.features());
-    if (!features.contains(CsrfHeaderFeature.class.getName())) {
-      features.add(CsrfHeaderFeature.class.getName());
-    }
-    features.remove(OAuth2Feature.class.getName());
     graphMock = new RestClient(graphMock.uri(), graphMock.name(), graphMock.uniqueId(), graphMock.description(),
-      features, graphMock.properties(), graphMock.metas());
+      graphMock.features(), graphMock.properties(), graphMock.metas());
 
     clients.set(graphMock);
   }

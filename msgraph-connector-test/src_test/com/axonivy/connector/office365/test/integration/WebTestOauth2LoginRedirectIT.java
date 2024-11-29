@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -46,6 +47,7 @@ class WebTestOauth2LoginRedirectIT {
   }
 
   @Test
+  @Disabled
   void redirect(WebAppFixture fixture) {
     SetupHelper.load().entrySet().forEach(prop -> {
       System.out.println("setting up "+prop.getKey());

@@ -1,0 +1,15 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "GraphAboutMeDialogData",
+  "namespace" : "com.axonivy.connector.office365.test.GraphAboutMeDialog",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "displayName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "mail",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

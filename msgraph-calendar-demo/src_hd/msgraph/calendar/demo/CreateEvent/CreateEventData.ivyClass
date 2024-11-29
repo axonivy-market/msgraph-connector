@@ -1,6 +1,0 @@
-CreateEventData #class
-msgraph.calendar.demo.CreateEvent #namespace
-event msgraph.connector.NewEvent #field
-event PERSISTENT #fieldModifier
-participant String #field
-participant PERSISTENT #fieldModifier

@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "184A9D4A92C26C8E",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,22 +10,26 @@
       "type" : "CallSubStart",
       "name" : "recentMessages()",
       "config" : {
-        "callSignature" : "recentMessages",
+        "signature" : "recentMessages",
         "result" : {
           "params" : [
-            { "name" : "messages", "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphChatMessage>" }
+            { "name" : "messages", "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphChatMessage>", "desc" : "" }
           ],
           "map" : {
             "result.messages" : "in.messages"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "icon" : "res:/webContent/icons/microsoft.png?small"
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -37,56 +41,64 @@
       "type" : "RestClientCall",
       "name" : "my chats",
       "config" : {
-        "path" : "/me/chats",
-        "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "method" : "GET",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.chats" : "result.value"
+        "target" : {
+          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "path" : "/me/chats"
         },
-        "resultType" : "com.microsoft.graph.MicrosoftGraphChatCollectionResponse",
-        "bodyInputType" : "ENTITY",
-        "responseCode" : "out.chatId = out.chats.get(0).id;"
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphChatCollectionResponse",
+            "map" : {
+              "out.chats" : "result.value"
+            },
+            "code" : "out.chatId = out.chats.get(0).id;"
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 248, "y" : 64 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f6", "to" : "f5" }
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
     }, {
       "id" : "f5",
       "type" : "RestClientCall",
       "name" : "messages",
       "config" : {
-        "path" : "/me/chats/{chat-id}/messages",
-        "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "method" : "GET",
-        "queryParams" : {
-          "$top" : "",
-          "$skip" : "",
-          "$search" : "",
-          "$filter" : "",
-          "$count" : "",
-          "$orderby" : "",
-          "$select" : "",
-          "$expand" : ""
+        "target" : {
+          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "path" : "/me/chats/{chat-id}/messages",
+          "templateParams" : {
+            "chat-id" : "in.chatId"
+          },
+          "queryParams" : {
+            "$top" : "",
+            "$skip" : "",
+            "$search" : "",
+            "$filter" : "",
+            "$count" : "",
+            "$orderby" : "",
+            "$select" : "",
+            "$expand" : ""
+          }
         },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.messages" : "result.value"
-        },
-        "templateParams" : {
-          "chat-id" : "in.chatId"
-        },
-        "resultType" : "com.microsoft.graph.MicrosoftGraphChatMessageCollectionResponse",
-        "bodyInputType" : "ENTITY"
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphChatMessageCollectionResponse",
+            "map" : {
+              "out.messages" : "result.value"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 408, "y" : 64 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

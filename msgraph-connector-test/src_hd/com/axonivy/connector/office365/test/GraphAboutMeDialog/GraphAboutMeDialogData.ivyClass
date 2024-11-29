@@ -1,6 +1,0 @@
-GraphAboutMeDialogData #class
-com.axonivy.connector.office365.test.GraphAboutMeDialog #namespace
-displayName String #field
-displayName PERSISTENT #fieldModifier
-mail String #field
-mail PERSISTENT #fieldModifier

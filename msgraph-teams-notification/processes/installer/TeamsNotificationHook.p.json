@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "184E220984F91EC1",
   "config" : {
     "data" : "msgraph.teams.notification.Data"
@@ -12,7 +12,8 @@
         "hook"
       ],
       "config" : {
-        "outerBean" : "msgraph.teams.notification.TeamNotificationStart"
+        "javaClass" : "msgraph.teams.notification.TeamNotificationStart",
+        "link" : "eventLink.ivp"
       },
       "visual" : {
         "at" : { "x" : 80, "y" : 56 },

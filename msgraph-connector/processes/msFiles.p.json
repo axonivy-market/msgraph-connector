@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "184A3CA3AEE93D9D",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,7 +10,7 @@
       "type" : "CallSubStart",
       "name" : "uploadFile(File,String)",
       "config" : {
-        "callSignature" : "uploadFile",
+        "signature" : "uploadFile",
         "input" : {
           "params" : [
             { "name" : "file", "type" : "java.io.File", "desc" : "file to upload unto sharepoint site" },
@@ -20,14 +20,18 @@
             "out.siteId" : "param.siteId",
             "out.upload" : "param.#file"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "icon" : "res:/webContent/icons/microsoft.png?small"
       },
-      "connect" : { "id" : "f6", "to" : "f5" }
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -42,55 +46,64 @@
         "sites"
       ],
       "config" : {
-        "path" : "/me/followedSites",
-        "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "method" : "GET",
-        "queryParams" : {
-          "$top" : "",
-          "$skip" : "",
-          "$search" : "",
-          "$filter" : "",
-          "$count" : "",
-          "$orderby" : "",
-          "$select" : "",
-          "$expand" : ""
+        "target" : {
+          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "path" : "/me/followedSites",
+          "templateParams" : {
+            "drive-id" : ""
+          },
+          "queryParams" : {
+            "$top" : "",
+            "$skip" : "",
+            "$search" : "",
+            "$filter" : "",
+            "$count" : "",
+            "$orderby" : "",
+            "$select" : "",
+            "$expand" : ""
+          }
         },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.sites" : "result.value"
-        },
-        "templateParams" : {
-          "drive-id" : ""
-        },
-        "resultType" : "com.microsoft.graph.MicrosoftGraphSiteCollectionResponse",
-        "bodyInputType" : "ENTITY",
-        "responseCode" : [
-          "import com.microsoft.graph.MicrosoftGraphSite;",
-          "MicrosoftGraphSite site = out.sites.get(0);",
-          "",
-          "ivy.log.info(\"using site \"+site.displayName+\"(\"+site.id+\") for upload\");",
-          "out.siteId = site.sharepointIds.siteId;"
-        ]
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphSiteCollectionResponse",
+            "map" : {
+              "out.sites" : "result.value"
+            },
+            "code" : [
+              "import com.microsoft.graph.MicrosoftGraphSite;",
+              "MicrosoftGraphSite site = out.sites.get(0);",
+              "",
+              "ivy.log.info(\"using site \"+site.displayName+\"(\"+site.id+\") for upload\");",
+              "out.siteId = site.sharepointIds.siteId;"
+            ]
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 304, "y" : 168 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f8", "to" : "f7", "via" : [ { "x" : 472, "y" : 168 } ] }
+      "connect" : [
+        { "id" : "f8", "to" : "f7", "via" : [ { "x" : 472, "y" : 168 } ] }
+      ]
     }, {
       "id" : "f5",
       "type" : "Alternative",
       "name" : "siteId?",
+      "config" : {
+        "conditions" : {
+          "f4" : "in.siteId.isBlank()"
+        }
+      },
       "visual" : {
         "at" : { "x" : 192, "y" : 64 },
-        "labelOffset" : { "x" : 16, "y" : -16 }
+        "labelOffset" : { "y" : -16 }
       },
       "connect" : [
         { "id" : "f4", "to" : "f3", "via" : [ { "x" : 192, "y" : 168 } ], "label" : {
             "name" : "no",
             "segment" : 1.08
-          }, "condition" : "in.siteId.isBlank()" },
+          } },
         { "id" : "f9", "to" : "f7", "label" : {
             "name" : "yes"
           } }
@@ -100,36 +113,45 @@
       "type" : "RestClientCall",
       "name" : "upload",
       "config" : {
-        "bodyObjectMapping" : {
-          "param" : "in.upload"
-        },
-        "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
         "method" : "POST",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "bodyObjectType" : "java.io.File",
-        "bodyInputType" : "ENTITY",
-        "responseCode" : "ivy.log.info(\"upload done \"+result);",
-        "path" : "/sites/{site-id}/drive/items/{parent-id}:/{filename}:/content",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "templateParams" : {
-          "site-id" : "in.siteId",
-          "parent-id" : "\"root\"",
-          "filename" : "in.upload.getName()"
+        "target" : {
+          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "path" : "/sites/{site-id}/drive/items/{parent-id}:/{filename}:/content",
+          "templateParams" : {
+            "site-id" : "in.siteId",
+            "parent-id" : "\"root\"",
+            "filename" : "in.upload.getName()"
+          }
         },
-        "resultType" : "com.microsoft.graph.MicrosoftGraphDriveItem",
-        "bodyMediaType" : "application/octet-stream"
+        "body" : {
+          "mediaType" : "application/octet-stream",
+          "entity" : {
+            "type" : "java.io.File",
+            "map" : {
+              "param" : "in.upload"
+            }
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphDriveItem",
+            "code" : "ivy.log.info(\"upload done \"+result);"
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 472, "y" : 64 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     }, {
       "id" : "f10",
       "type" : "CallSubStart",
       "name" : "uploadFile(File)",
       "config" : {
-        "callSignature" : "uploadFile",
+        "signature" : "uploadFile",
         "input" : {
           "params" : [
             { "name" : "file", "type" : "java.io.File", "desc" : "file to upload unto sharepoint site" }
@@ -137,20 +159,24 @@
           "map" : {
             "out.upload" : "param.#file"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 168 },
         "icon" : "res:/webContent/icons/microsoft.png?small"
       },
-      "connect" : { "id" : "f11", "to" : "f3" }
+      "connect" : [
+        { "id" : "f11", "to" : "f3" }
+      ]
     }, {
       "id" : "f12",
       "type" : "CallSubStart",
       "name" : "myRecentFiles()",
       "config" : {
-        "callSignature" : "myRecentFiles",
+        "signature" : "myRecentFiles",
         "result" : {
           "params" : [
             { "name" : "items", "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphDriveItem>", "desc" : "recently used items" }
@@ -158,33 +184,43 @@
           "map" : {
             "result.items" : "in.items"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 280 },
         "icon" : "res:/webContent/icons/microsoft.png?small"
       },
-      "connect" : { "id" : "f14", "to" : "f13" }
+      "connect" : [
+        { "id" : "f14", "to" : "f13" }
+      ]
     }, {
       "id" : "f13",
       "type" : "RestClientCall",
       "name" : "drive/recent",
       "config" : {
-        "path" : "/me/drive/recent",
-        "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.items" : "result.value"
+        "target" : {
+          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "path" : "/me/drive/recent"
         },
-        "resultType" : "com.microsoft.graph.MicrosoftGraphDriveItemCollectionResponse"
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphDriveItemCollectionResponse",
+            "map" : {
+              "out.items" : "result.value"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 296, "y" : 280 },
         "icon" : "res:/webContent/icons/microsoft.png"
       },
-      "connect" : { "id" : "f16", "to" : "f15" }
+      "connect" : [
+        { "id" : "f16", "to" : "f15" }
+      ]
     }, {
       "id" : "f15",
       "type" : "CallSubEnd",

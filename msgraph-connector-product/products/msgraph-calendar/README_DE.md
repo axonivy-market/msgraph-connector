@@ -6,9 +6,3 @@ Dieser Konnektor:
 
 - ist Teil der Microsoft Graph REST API.
 - ermöglicht Entwicklern mit geringem Programmieraufwand die Erweiterung bestehender Axon Ivy Geschäftsprozesse mit Featuren von Microsoft Office Kalender
-
-## Demo
-
-![demo-calendar](doc/img/demo_calendar.png)
-
-

@@ -11,18 +11,3 @@ Dieser Konnektor:
 Microsoft Graph ist dein Zugang zu Daten in Microsoft 365. Es bietet ein einheitliches Programmiermodell um auf die  Daten in Microsoft 365, Windows 10, Enterprise Mobility und Security zuzugreifen.
 
 ![ms-graph](https://docs.microsoft.com/en-us/graph/images/edugraph.png)
-
-## Demo
-
-Check the demo implementations we have prepared for the various services from Microsoft:
-
-[Microsoft Calendar](https://market.axonivy.com/msgraph-calendar) - this connector integrates Microsoft Outlook features into your process application.
-
-[Microsoft Excel](https://market.axonivy.com/excel-connector) - depending on which study you take as a reference, 50-75% of all companies work with Excel - a good reason to provide a connector for process automation. 
-
-[Microsoft Outlook](https://market.axonivy.com/msgraph-mail) and [Microsoft Teams](https://market.axonivy.com/msgraph-chat) - can also easily be integrated.
-
-Check [Microsoft ToDo](https://market.axonivy.com/msgraph-todo) if you would like to integrate the Microsoft Task Manager.
-
-
-

@@ -8,5 +8,7 @@ Dieser Konnektor:
 - nutzt die Microsoft Graph REST API  
 - enthält eine Demo-Implementierung
 
-> **Hinweis:** Ab Version 11.2 sind Benachrichtigungen über Microsoft Teams Bestandteil des Core-Produkts. (Siehe Axon Ivy 11.2 für weitere Infos)
+> **Hinweis:** Ab Version 11.2 sind Benachrichtigungen über Microsoft Teams Bestandteil des Core-Produkts. (Siehe [Axon Ivy 11.2](https://dev.axonivy.com/news/11.2) für weitere Informationen).
+
+
 

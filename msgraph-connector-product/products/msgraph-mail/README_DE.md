@@ -1,6 +1,6 @@
 # Microsoft 365 Mail Konnektor
 
-Der Microsoft Mail Calendar API Konnektor von Axon Ivy unterstützt dich dabei Funktionen von Microsoft Outlook direkt in deine Axon Ivy Prozessanwendungen zu integrieren. 
+Der [Microsoft Mail Calendar API](https://docs.microsoft.com/en-us/graph/outlook-mail-concept-overview) Konnektor von Axon Ivy unterstützt dich dabei Funktionen von Microsoft Outlook direkt in deine Axon Ivy Prozessanwendungen zu integrieren. 
   
 Dieser Konnektor:  
 

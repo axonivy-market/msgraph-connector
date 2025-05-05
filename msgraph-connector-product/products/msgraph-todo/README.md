@@ -1,16 +1,12 @@
-# Microsoft 365 To Do Connector
-Axon Ivy’s [Microsoft Mail To Do API](https://docs.microsoft.com/en-us/graph/todo-concept-overview)
-connector helps you to accelerate process automation initiatives by integrating Microsoft
-Outlook features into your process application within no time. Microsoft To Do
-provides a simple way for people to manage their tasks and plan their day. This
-connector:
+# Microsoft 365 ToDo Connector
 
-- Is part of the Microsoft Graph REST API.
-- Enables task synchronization across any Microsoft 365 product easily.
-- Supports you with an easy-to-copy demo implementation to reduce your
-  integration effort.
-- Enables low code citizen developers to enhance existing business processes
-  with Microsoft 365/Office features.
+The [Microsoft Mail ToDo API](https://docs.microsoft.com/en-us/graph/todo-concept-overview) connector from Axon Ivy helps you integrate Microsoft To Do features into your application. Microsoft ToDo provides a simple way to manage tasks and plan your day.
+
+This connector:
+
+- is part of the Microsoft Graph REST API  
+- enables easy task synchronization across all Microsoft 365 products  
+- includes a demo implementation
 
 ## Demo
 

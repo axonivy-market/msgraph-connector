@@ -8,7 +8,3 @@ Dieser Konnektor:
 - verarbeitet E-Mails automatisch  
 - enthält eine Demo-Implementierung  
 - stellt eine einsatzbereite Demo zur Verfügung, die du einfach in dein Projekt übernehmen kannst, um den Integrationsaufwand zu minimieren.
-
-## Demo
-
-![demo-mail](doc/img/demo_mail.png)

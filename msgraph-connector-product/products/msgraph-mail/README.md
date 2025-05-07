@@ -7,6 +7,7 @@ This connector:
 - is part of the Microsoft Graph REST API  
 - automatically processes mail messages  
 - includes a demo implementation
+- provides a ready-to-use demo that you can simply copy into your project to minimize integration effort.
 
 
 ## Demo

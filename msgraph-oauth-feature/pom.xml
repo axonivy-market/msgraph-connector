@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.axonivy.connector.msgraph</groupId>
   <artifactId>msgraph-oauth-feature</artifactId>
-  <version>12.0.3-SNAPSHOT</version>
+  <version>13.1.1-SNAPSHOT</version>
   <packaging>iar</packaging>
   <scm>
     <developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>

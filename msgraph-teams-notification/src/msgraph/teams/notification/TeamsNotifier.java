@@ -2,7 +2,6 @@ package msgraph.teams.notification;
 
 import static java.util.function.Predicate.not;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -65,12 +64,8 @@ public class TeamsNotifier extends NewTaskAssignmentListener {
     Ivy.log().info("notify ms-teams clients on new teask "+newTask);
 
     // exec as system session: avoid token clash!
-    List<ch.ivyteam.ivy.workflow.task.responsible.Responsible> responsibles = newTask.responsibles().all();
-    for (ch.ivyteam.ivy.workflow.task.responsible.Responsible responsible : responsibles) {
-      ISecurityMember activator = responsible.get();
-      getUsers(activator).map(IUser::getExternalId).filter(Objects::nonNull).filter(not(String::isBlank))
-          .forEach(userId -> notify(userId, newTask));
-    }
+    newTask.responsibles().all().stream().flatMap(responsible -> getUsers(responsible.get())).map(IUser::getExternalId)
+        .filter(Objects::nonNull).filter(not(String::isBlank)).forEach(userId -> notify(userId, newTask));
   }
 
   private void notify(String azureUserId, ITask newTask) {

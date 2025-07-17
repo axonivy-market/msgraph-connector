@@ -13,11 +13,16 @@ main Business Project that will make use of this product:
 
 Afterwards set the values as shown in the Azure App setup below.
 
+> [!NOTE]
+> The format of variable is changed from version 13.
+> E.g. 
+> The variable path `microsoft-connector` is renamed to `microsoftConnector`.
+> The variable path `teams-notification` is renamed to `teamsNotification`.
 
 ### Azure App
 
 1. Register an application on Azure as described in the Microsoft's Java Tutorial https://docs.microsoft.com/en-us/graph/tutorials/java?tutorial-step=2
-1. Navigate to `Overview` in the menu and copy the 'Application (client) ID' into your variable called `appId` within the `microsoft-connector` section.
+1. Navigate to `Overview` in the menu and copy the 'Application (client) ID' into your variable called `appId` within the `microsoftConnector` section.
 1. Navigate to `Authentication` in the Azure App menu.
 	1. Add a `Redirect URI` in the `Web` Section.
 		- Axon Ivy has an authentication callback URI which follows the pattern `{scheme}://{host}:{port}/oauth2/callback`. This URI must be registered in the Azure App.
@@ -28,7 +33,7 @@ Afterwards set the values as shown in the Azure App setup below.
 1. Navigate to `Certificate & secrets` in the Azure App menu.
   1. Create a new secret by pressing `New client secret`. And select any validity period.
   ![new-secret](doc/img/azure_createSecret.png)
-  1. copy the value of the generated secret into your variable called `secretKey` within the `microsoft-connector` section.
+  1. copy the value of the generated secret into your variable called `secretKey` within the `microsoftConnector` section.
   ![copy-secret](doc/img/azure_copySecret.png)
 
 1. Navigate to `API Permissions` in the Azure App menu.

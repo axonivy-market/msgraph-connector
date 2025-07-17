@@ -5,7 +5,6 @@
   "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "todo",
-    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>"
   } ]
 }

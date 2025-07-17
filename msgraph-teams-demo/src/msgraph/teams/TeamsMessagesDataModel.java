@@ -11,6 +11,7 @@ import com.microsoft.graph.MicrosoftGraphChatMessage;
 
 public class TeamsMessagesDataModel extends LazyDataModel<MicrosoftGraphChatMessage> {
 
+  private static final long serialVersionUID = 7402653905218715892L;
   private String chatId = "mock";
 
   public String getChatId() {

@@ -2,6 +2,7 @@ package msgraph.teams.notification;
 
 import static java.util.function.Predicate.not;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -49,12 +50,12 @@ public class TeamsNotifier extends NewTaskAssignmentListener {
       .property(OAuth2Feature.Property.SCOPE, CHAT_PERMISSIONS)
       .property(OAuth2Feature.Property.USE_APP_PERMISSIONS, Boolean.FALSE.toString())
       .property(OAuth2Feature.Property.USE_USER_PASS_FLOW, Boolean.TRUE.toString())
-      .property(OAuth2Feature.Property.USER, Ivy.var().get("teams-notification.username"))
-      .property(OAuth2Feature.Property.PASS, Ivy.var().get("teams-notification.userpass"));
+      .property(OAuth2Feature.Property.USER, Ivy.var().get("teamsNotification.username"))
+      .property(OAuth2Feature.Property.PASS, Ivy.var().get("teamsNotification.userpass"));
   }
 
   private boolean isEnabled() {
-    return Boolean.parseBoolean((Ivy.var().get("teams-notification.enabled")));
+    return Boolean.parseBoolean((Ivy.var().get("teamsNotification.enabled")));
   }
 
   public void notifyGraph(ITask newTask) {
@@ -64,11 +65,12 @@ public class TeamsNotifier extends NewTaskAssignmentListener {
     Ivy.log().info("notify ms-teams clients on new teask "+newTask);
 
     // exec as system session: avoid token clash!
-    ISecurityMember activator = newTask.getActivator();
-    getUsers(activator).map(IUser::getExternalId)
-      .filter(Objects::nonNull)
-      .filter(not(String::isBlank))
-      .forEach(userId -> notify(userId, newTask));
+    List<ch.ivyteam.ivy.workflow.task.responsible.Responsible> responsibles = newTask.responsibles().all();
+    for (ch.ivyteam.ivy.workflow.task.responsible.Responsible responsible : responsibles) {
+      ISecurityMember activator = responsible.get();
+      getUsers(activator).map(IUser::getExternalId).filter(Objects::nonNull).filter(not(String::isBlank))
+          .forEach(userId -> notify(userId, newTask));
+    }
   }
 
   private void notify(String azureUserId, ITask newTask) {

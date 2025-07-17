@@ -13,6 +13,8 @@ import msgraph.wrappers.MsGraphMailRest;
 
 public class MailDataModel extends LazyDataModel<MicrosoftGraphMessage> {
 
+  private static final long serialVersionUID = -3136997076795549127L;
+
   @Override
   public String getRowKey(MicrosoftGraphMessage mail) {
     return mail.getId();

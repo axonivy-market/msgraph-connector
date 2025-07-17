@@ -18,7 +18,7 @@ public class TeamNotificationStart extends AbstractProcessStartEventBean {
 
   @Override
   public void poll() {
-    getEventBeanRuntime().setPollTimeInterval(-1); // no poll; we only use start/stop hooks
+    getEventBeanRuntime().poll().disable(); // no poll; we only use start/stop hooks
   }
 
   @Override
@@ -27,14 +27,14 @@ public class TeamNotificationStart extends AbstractProcessStartEventBean {
     IWorkflowManager wfManager = IWorkflowManager.instance();
     this.listener = new TeamsNotifier();
     wfManager.addWorkflowListener(listener);
-    Ivy.log().info("teams-notification installed");
+    Ivy.log().info("teamsNotification installed");
   }
 
   @Override
   public void stop(IProgressMonitor monitor) throws ServiceException {
     if (this.listener != null) {
       IWorkflowManager.instance().removeWorkflowListener(listener);
-      Ivy.log().info("teams-notification stopped");
+      Ivy.log().info("teamsNotification stopped");
     }
     super.stop(monitor);
   }

@@ -5,7 +5,6 @@
   "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "events",
-    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphEvent>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphEvent>"
   } ]
 }

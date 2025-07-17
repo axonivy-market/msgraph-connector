@@ -37,9 +37,9 @@ public class SetupHelper {
       });
     }
 
-    loaded.put("microsoft-connector.appId", appId.get());
-    loaded.put("microsoft-connector.secretKey", secretKey.get());
-    loaded.put("microsoft-connector.tenantId", tenantId.get());
+    loaded.put("microsoftConnector.appId", appId.get());
+    loaded.put("microsoftConnector.secretKey", secretKey.get());
+    loaded.put("microsoftConnector.tenantId", tenantId.get());
     return loaded;
   }
 

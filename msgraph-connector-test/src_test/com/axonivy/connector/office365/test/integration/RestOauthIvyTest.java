@@ -28,10 +28,10 @@ class RestOauthIvyTest{
   @Disabled
   void callbackOauthRedirect() {
     var restClient = Ivy.rest().client(GraphTestClient.GRAPH_CLIENT_ID);
-    String appId = Ivy.var().get("microsoft-connector.appId");
-    String secret = Ivy.var().get("microsoft-connector.secretKey");
-    String tenantId = Ivy.var().get("microsoft-connector.tenantId");
-    String connectorProvider = Ivy.var().get("microsoft-connector.connectorProvider");
+    String appId = Ivy.var().get("microsoftConnector.appId");
+    String secret = Ivy.var().get("microsoftConnector.secretKey");
+    String tenantId = Ivy.var().get("microsoftConnector.tenantId");
+    String connectorProvider = Ivy.var().get("microsoftConnector.connectorProvider");
     var response = restClient.path("/applications")
       .property("AUTH.appId", appId)
       .property("AUTH.secretKey", secret)

@@ -1,18 +1,6 @@
 # yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
 Variables:
   
-  microsoftConnector:
-    # Your Azure Application (client) ID
-    appId: ""
-    
-    # Secret key from your applications "certificates & secrets"
-    # [password]
-    secretKey: ""
-    
-    # tenant to use for OAUTH2 request.
-    # set the Azure Directory (tenant) ID, for application requests.
-    tenantId: ""
-  
   teamsNotification:
     # enables the generic Microsoft Teams notification for new tasks
     enabled: true

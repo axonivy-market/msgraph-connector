@@ -13,7 +13,7 @@ RestClients:
       jersey.client.connectorProvider: ${ivy.var.microsoftConnector.connectorProvider}
       JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
       AUTH.appId: ${ivy.var.microsoftConnector.appId}
-      AUTH.secretKey: ${decrypt:Ni3pyfsLUXTh5fGCzcdsSk00hVOkD3CmC4ON9ZoRS+1F6/Wxnc8W2RrnGbixeVog}
+      AUTH.secretKey: ${ivy.var.microsoftConnector.secretKey}
       AUTH.useAppPermissions: ${ivy.var.microsoftConnector.useAppPermissions}
       AUTH.useUserPassFlow: ${ivy.var.microsoftConnector.useUserPassFlow.enabled}
       AUTH.user: ${ivy.var.microsoftConnector.useUserPassFlow.user}

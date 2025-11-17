@@ -1,9 +1,17 @@
-# Microsoft 365 ToDo Konnektor
+# #Microsoft 365 ToDo Anschluss
 
-Der [Microsoft Outlook To Do API](https://docs.microsoft.com/en-us/graph/todo-concept-overview) Konnektor von Axon Ivy unterstützt dich dabei Funktionen von  Microsoft ToDo in deine Anwendung zu integrieren. Microsoft ToDo bietet eine einfache Möglichkeit, Aufgaben zu verwalten und den Tag zu planen.
+Das [#Microsoft Post ToDo
+API](https://docs.microsoft.com/en-us/graph/todo-concept-overview) Anschluss von
+#Axon #Ivy hilft du integrierst #Microsoft Zu Tun bietet hinein euren Antrag.
+#Microsoft ToDo versieht einen simplen Weg zu fertigbringen beschäftigt und
+planen euren Tag.
 
-Dieser Konnektor:
+Dieser Anschluss:
 
-- ist Teil der Microsoft Graph REST API  
-- ermöglicht eine einfache Aufgaben-Synchronisation über alle Microsoft 365-Produkte hinweg  
-- enthält eine  Demo-Implementierung 
+- Ist Teil von den #Microsoft Graphen RUHT API
+- Aktiviert darüber leichte Task #Synchronisierung #alle #Microsoft 365 Produkte
+- Schließt ein eine Demo Ausführung
+
+## Demo
+
+![Demo-toDo](doc/img/demo_todo.png)

@@ -1,19 +1,19 @@
-# #Microsoft 365 Post Anschluss
+# Microsoft 365 Mail Connector
 
-Das [#Microsoft Post Kalender
+Der [Microsoft Mail Calendar
 API](https://docs.microsoft.com/en-us/graph/outlook-mail-concept-overview)
-Anschluss von #Axon #Ivy hilft du integrierst #Microsoft Aussicht Charakterzüge
-direkt verarbeitet hinein euren #Axon Efeu Anträge.
+Connector von Axon Ivy hilft Ihnen dabei, Microsoft Outlook-Funktionen direkt in
+Ihre Axon Ivy-Prozessanwendungen zu integrieren.
 
-Dieser Anschluss:
+Dieser Konnektor:
 
-- Ist Teil von den #Microsoft Graphen RUHT API
-- Automatisch Arbeitsgänge Post Meldungen
-- Schließt ein eine Demo Ausführung
-- Versieht ein bereites-zu-Nutzung Demo dass du kannst einfach hinein eure
-  Projekt kopieren zu minimieren Integration Anstrengung.
+- ist Teil der Microsoft Graph REST API.
+- Verarbeitet automatisch E-Mail-Nachrichten.
+- Enthält eine Demo-Implementierung.
+- bietet eine gebrauchsfertige Demo, die Sie einfach in Ihr Projekt kopieren
+  können, um den Integrationsaufwand zu minimieren.
 
 ## Demo
 
-![Demo-Post](doc/img/demo_mail.png)
+![demo-mail](doc/img/demo_mail.png)
 

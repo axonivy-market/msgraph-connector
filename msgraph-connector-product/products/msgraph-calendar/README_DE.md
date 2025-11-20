@@ -1,16 +1,15 @@
-# #Microsoft 365 Kalender Anschluss
-#Axon Efeus [#Microsoft Aussicht Kalender
-API](https://docs.microsoft.com/en-us/graph/outlook-calendar-concept-overview)
-Anschluss integriert #Microsoft Aussicht Charakterzüge hinein euren Arbeitsgang
-Antrag.
+# Microsoft 365 Kalender-Konnektor
+Der [Microsoft Outlook Calendar
+API](https://docs.microsoft.com/en-us/graph/outlook-calendar-concept-overview)-Konnektor
+von Axon Ivy integriert Microsoft Outlook-Funktionen in Ihre Prozessanwendung.
 
-Dieser Anschluss:
+Dieser Konnektor:
 
-- Ist Teil von den #Microsoft Graphen RUHT API.
-- Aktiviert niederen Code Bürger Entwickler zu erweitern existieren dienstliche
-  Arbeitsgänge mit #Microsoft 365/Büro Charakterzüge.
+- Ist Teil der Microsoft Graph REST API.
+- Ermöglicht Low-Code-Citizen-Developern, bestehende Geschäftsprozesse mit
+  Microsoft 365/Office-Funktionen zu verbessern.
 
 ## Demo
 
-![Demo-Kalender](doc/img/demo_calendar.png)
+![demo-calendar](doc/img/demo_calendar.png)
 

@@ -1,23 +1,23 @@
-# #Microsoft Mannschaften Anschluss
+# Microsoft Teams Connector
 
-Die #Microsoft Mannschaften API Anschluss von #Axon #Ivy hilft du beschleunigst
-mal Arbeitsgang Automatisierung integrieren #Microsoft Mannschaften
-Charakterzüge direkt hinein eure Arbeitsgang Anträge. Automatisch organisier und
-verarbeite Meldungen.
+Der Microsoft Teams API Connector von Axon Ivy hilft Ihnen, die
+Prozessautomatisierung zu beschleunigen, indem er Microsoft Teams-Funktionen
+direkt in Ihre Prozessanwendungen integriert. Organisieren und verarbeiten Sie
+Nachrichten automatisch.
 
-Dieser Anschluss:
+Dieser Konnektor:
 
-- #Bekannt geben Nutzer in eurer Organisation von neu #Axon Efeu workflow Tasks
-  in Mannschaften
-- Benutzt den #Microsoft Graphen RUHT API
-- Schließt ein eine Demo Ausführung
+- Benachrichtigt Benutzer in Ihrer Organisation über neue Axon
+  Ivy-Workflow-Aufgaben in Teams.
+- Verwendet die Microsoft Graph REST API.
+- Enthält eine Demo-Implementierung.
 
-> **_NOTE:_** Da von Version `11.2`, Mitteilungen durch #Microsoft Mannschaften
-> sind Teil von das Innenteil Produkt. (Sehen [#Axon Efeu
-> 11.2](https://dev.axonivy.com/news/11.2) für #mehr info)
+> **_HINWEIS:_** Ab Version `11.2` sind Benachrichtigungen über Microsoft Teams
+> Teil des Kernprodukts. (Weitere Informationen finden Sie unter [Axon Ivy
+> 11.2](https://dev.axonivy.com/news/11.2).)
 
 
 ## Demo
 
-![Demo-Post](doc/img/teams-notification-chat.png)
+![demo-mail](doc/img/teams-notification-chat.png)
 

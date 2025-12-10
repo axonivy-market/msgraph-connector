@@ -75,10 +75,8 @@
       "config" : {
         "output" : {
           "code" : [
-            "import com.microsoft.graph.GraphTestClient;",
             "import com.axonivy.connector.office365.test.integration.helper.SetupHelper;",
             "",
-            "GraphTestClient.resetForApp(ivy.task.getApplication());",
             "SetupHelper.setup();"
           ]
         }

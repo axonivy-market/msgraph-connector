@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.microsoft.graph.GraphTestClient;
 import com.microsoft.graph.MicrosoftGraphUser;
 
 import ch.ivyteam.ivy.environment.AppFixture;

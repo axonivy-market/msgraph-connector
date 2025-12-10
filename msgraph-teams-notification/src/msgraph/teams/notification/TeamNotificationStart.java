@@ -1,7 +1,5 @@
 package msgraph.teams.notification;
 
-import org.eclipse.core.runtime.IProgressMonitor;
-
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.process.eventstart.AbstractProcessStartEventBean;
 import ch.ivyteam.ivy.service.ServiceException;
@@ -22,8 +20,8 @@ public class TeamNotificationStart extends AbstractProcessStartEventBean {
   }
 
   @Override
-  public void start(IProgressMonitor monitor) throws ServiceException {
-    super.start(monitor);
+  public void start() throws ServiceException {
+    super.start();
     IWorkflowManager wfManager = IWorkflowManager.instance();
     this.listener = new TeamsNotifier();
     wfManager.addWorkflowListener(listener);
@@ -31,12 +29,12 @@ public class TeamNotificationStart extends AbstractProcessStartEventBean {
   }
 
   @Override
-  public void stop(IProgressMonitor monitor) throws ServiceException {
+  public void stop() throws ServiceException {
     if (this.listener != null) {
       IWorkflowManager.instance().removeWorkflowListener(listener);
       Ivy.log().info("teamsNotification stopped");
     }
-    super.stop(monitor);
+    super.stop();
   }
 
 }

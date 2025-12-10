@@ -8,10 +8,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import com.axonivy.connector.office365.test.GraphTestClient;
 import com.axonivy.connector.office365.test.integration.helper.SetupHelper;
-import com.microsoft.graph.GraphTestClient;
 
-import ch.ivyteam.ivy.application.IApplication;
+import ch.ivyteam.ivy.environment.AppFixture;
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.environment.IvyTest;
 
@@ -19,9 +19,9 @@ import ch.ivyteam.ivy.environment.IvyTest;
 class RestOauthIvyTest{
 
   @BeforeEach
-  void beforeEach(IApplication app) {
+  void beforeEach(AppFixture fixture) {
     SetupHelper.setup();
-    GraphTestClient.resetForApp(app);
+    GraphTestClient.configureFixture(fixture);
   }
 
   @Test

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Objects;
 
 import javax.annotation.security.PermitAll;
 import javax.ws.rs.Consumes;
@@ -21,7 +22,6 @@ import javax.ws.rs.core.Response;
 import org.apache.commons.io.IOUtils;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.google.common.base.Objects;
 
 import ch.ivyteam.ivy.bpm.error.BpmError;
 import io.swagger.v3.oas.annotations.Hidden;
@@ -72,7 +72,7 @@ public class GraphServiceMock
   {
     String mailSubject = json.get("Message").get("subject").asText();
     String expect = "Meet for Lunch?";
-    if (!Objects.equal(mailSubject, expect))
+    if (!Objects.equals(mailSubject, expect))
     {
       BpmError.create("test:assertion")
       .withAttribute("expected", "subject:"+mailSubject+" \n:toBe:"+expect)

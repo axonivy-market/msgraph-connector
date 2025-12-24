@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "17844DC635AF15F4",
   "kind" : "CALLABLE_SUB",
   "description" : "Reads and creates todo tasks.",
@@ -28,7 +28,7 @@
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 10, "y" : 38 },
         "description" : "Reads all todo tasks.",
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f2", "to" : "f3" }
@@ -200,7 +200,7 @@
         "at" : { "x" : 96, "y" : 192 },
         "labelOffset" : { "x" : 10, "y" : 46 },
         "description" : "Creates a new todo task.",
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f9", "to" : "f12" }

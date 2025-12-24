@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "1783A266998C4015",
   "kind" : "CALLABLE_SUB",
   "description" : "Reads events from your calendar and creates new ones.",
@@ -28,7 +28,7 @@
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 21, "y" : 38 },
         "description" : "Reads upcoming events from your calendar.",
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f8", "to" : "f3" }
@@ -285,7 +285,7 @@
         "at" : { "x" : 96, "y" : 288 },
         "labelOffset" : { "x" : 47, "y" : 40 },
         "description" : "Creates a new meeting in your your calendar.",
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f10", "to" : "f14" }

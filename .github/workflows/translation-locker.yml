@@ -1,0 +1,8 @@
+name: Translation Locker
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    uses: axonivy-market/github-workflows/.github/workflows/translation-locker.yml@v6

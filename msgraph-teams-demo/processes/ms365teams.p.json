@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "184AA087E474CB92",
   "config" : {
     "data" : "msgraph.teams.demo.Data"
@@ -13,7 +13,7 @@
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f3", "to" : "f2" }
@@ -56,7 +56,7 @@
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 176 },
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f11", "to" : "f10" }

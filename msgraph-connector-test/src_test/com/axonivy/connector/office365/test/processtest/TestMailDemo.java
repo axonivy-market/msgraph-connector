@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import com.axonivy.connector.office365.test.GraphTestClient;
 
-import ch.ivyteam.ivy.application.IApplication;
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;

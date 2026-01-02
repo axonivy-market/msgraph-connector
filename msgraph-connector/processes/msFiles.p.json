@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "184A3CA3AEE93D9D",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -27,7 +27,7 @@
       ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f6", "to" : "f5" }
@@ -166,7 +166,7 @@
       ],
       "visual" : {
         "at" : { "x" : 96, "y" : 168 },
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f11", "to" : "f3" }
@@ -191,7 +191,7 @@
       ],
       "visual" : {
         "at" : { "x" : 96, "y" : 280 },
-        "icon" : "res:/webContent/icons/microsoft.png?small"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f14", "to" : "f13" }

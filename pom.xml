@@ -8,27 +8,27 @@
 
   <modules>
     <module>msgraph-oauth-feature</module>
-    <module>${project.name}</module>
+    <module>msgraph-connector</module>
     <module>msgraph-mail-demo</module>
     <module>msgraph-calendar-demo</module>
     <module>msgraph-todo-demo</module>
     <module>msgraph-sharepoint-demo</module>
     <module>msgraph-teams-notification</module>
     <module>msgraph-teams-demo</module>
-    <module>${project.name}-test</module>
+    <module>msgraph-connector-test</module>
    
-    <module>${project.name}-product</module>
-    <module>${project.name}-product/products/${project.name}</module>
-    <module>${project.name}-product/products/msgraph-calendar</module>
-    <module>${project.name}-product/products/msgraph-todo</module>
-    <module>${project.name}-product/products/msgraph-mail</module>
-    <module>${project.name}-product/products/msgraph-chat</module>
+    <module>msgraph-connector-product</module>
+    <module>msgraph-connector-product/products/msgraph-connector</module>
+    <module>msgraph-connector-product/products/msgraph-calendar</module>
+    <module>msgraph-connector-product/products/msgraph-todo</module>
+    <module>msgraph-connector-product/products/msgraph-mail</module>
+    <module>msgraph-connector-product/products/msgraph-chat</module>
    
-    <module>${project.name}-app</module>
+    <module>msgraph-connector-app</module>
   </modules>
 
   <scm>
-    <developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>
+    <developerConnection>scm:git:https://github.com/axonivy-market/msgraph-connector.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 

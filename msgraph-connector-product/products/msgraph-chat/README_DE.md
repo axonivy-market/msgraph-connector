@@ -1,14 +1,23 @@
-# Microsoft Teams Konnektor
+# Microsoft Teams Connector
 
-Der Microsoft Teams API Konnektor von Axon Ivy unterstützt dich dabei, Prozessautomatisierungen schneller umzusetzen, indem du Funktionen von Microsoft Teams direkt in deine Prozessanwendungen integrierst. Organisiere und verarbeite Nachrichten automatisch.  
+Der Microsoft Teams API Connector von Axon Ivy hilft Ihnen, die
+Prozessautomatisierung zu beschleunigen, indem er Microsoft Teams-Funktionen
+direkt in Ihre Prozessanwendungen integriert. Organisieren und verarbeiten Sie
+Nachrichten automatisch.
 
 Dieser Konnektor:
 
-- benachrichtigt Nutzer in deiner Organisation über neue Axon Ivy Workflow-Tasks in Teams
-- nutzt die Microsoft Graph REST API  
-- enthält eine Demo-Implementierung
+- Benachrichtigt Benutzer in Ihrer Organisation über neue Axon
+  Ivy-Workflow-Aufgaben in Teams.
+- Verwendet die Microsoft Graph REST API.
+- Enthält eine Demo-Implementierung.
 
-> **Hinweis:** Ab Version 11.2 sind Benachrichtigungen über Microsoft Teams Bestandteil des Core-Produkts. (Siehe [Axon Ivy 11.2](https://dev.axonivy.com/news/11.2) für weitere Informationen).
+> **_HINWEIS:_** Ab Version `11.2` sind Benachrichtigungen über Microsoft Teams
+> Teil des Kernprodukts. (Weitere Informationen finden Sie unter [Axon Ivy
+> 11.2](https://dev.axonivy.com/news/11.2).)
 
 
+## Demo
+
+![demo-mail](doc/img/teams-notification-chat.png)
 

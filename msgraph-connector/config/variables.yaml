@@ -11,7 +11,7 @@ Variables:
     secretKey: ""
     
     # work with app permissions rather than in delegate of a user
-    # set to 'true' if no user consent should be accuired and adjust the 'tenantId' below.
+    # set to 'true' if no user consent should be acquired and adjust the 'tenantId' below.
     useAppPermissions: false
     
     # tenant to use for OAUTH2 request.

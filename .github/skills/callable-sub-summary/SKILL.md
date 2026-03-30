@@ -31,13 +31,17 @@ When asked for a summary such as "give me a marketing summary" or "what features
 
 - Intro sentence: one concise value statement.
 - Section heading: `What you get`
-- 3-6 bullets, each describing concrete workflow capabilities (prefer grouping by domain when present: calendar, mail, files, chat, todo).
+- 4-6 bullets, each describing concrete workflow capabilities (prefer grouping by domain when present: calendar, mail, files, chat, todo).
+- Section heading: `At a glance`
+- 3-5 bullets with compact proof points such as callable count, domain coverage, read/write mix, typed payload usage, connector-tag discoverability.
+- Section heading: `Expected developer experience`
+- 2-4 bullets focused on developer outcomes (integration speed, reusable orchestration patterns, fit for real workflow use cases).
 - Optional final sentence: clearly visible coverage limits only (for example input-only or result-only starts).
 
 Additional requirements:
-- Keep the whole response concise (target 4-8 lines total).
+- Keep the response concise and scannable (typically 10-16 lines).
 - Focus on signatures and typed input/result params as proof of capability.
 - Use marketing language, but keep claims grounded in detected starts only.
+- Prefer action-oriented phrasing that explains what teams can build.
 - Do not paste raw JSON in the final summary.
 
-See [summary reference](./references/output-format.md).

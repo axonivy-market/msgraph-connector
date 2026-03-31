@@ -50,7 +50,6 @@ for file in "${files[@]}"; do
           .elements[]?
           | select(.type == "CallSubStart" and (((.tags // []) | map(if type == "string" then ascii_downcase else "" end)) | index("connector")))
           | {
-              id: (.id // null),
               name: (.name // null),
               signature: (.config.signature // null),
               tags: (.tags // []),
@@ -72,7 +71,7 @@ for file in "${files[@]}"; do
                     }))
                   }
                 else
-                  null
+                  {}
                 end
               ),
               result: (
@@ -85,7 +84,7 @@ for file in "${files[@]}"; do
                     }))
                   }
                 else
-                  null
+                  {}
                 end
               )
             }

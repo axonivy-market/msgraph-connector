@@ -1,27 +1,39 @@
 # Microsoft 365 Connector
 Der [Microsoft 365](https://docs.microsoft.com/en-us/graph/overview)-Konnektor
-von Axon Ivy hilft Ihnen dabei, Microsoft Graph-Funktionen in Ihre
+von Axon Ivy hilft dir, Microsoft Graph-Funktionen in deine
 Prozessanwendung zu integrieren. Microsoft Graph baut auf Microsoft 365-APIs auf
-und ermöglicht Entwicklern die Integration ihrer Dienste in Microsoft-Produkte,
-darunter Windows, Microsoft 365 und Azure.
+und ermöglicht dir, Dienste in Microsoft-Produkte wie Windows, Microsoft 365
+und Azure einzubinden.
 
 Dieser Konnektor:
 
-- Ermöglicht eine schnelle und einfache Integration in jedes Microsoft
-  365-Produkt.
-- bietet einen einzigen Endpunkt für die Microsoft-Welt.
-- Unterstützt den einfachen Zugriff auf Daten aus Diensten wie Excel, Microsoft
+- Ermöglicht dir eine schnelle Integration in Microsoft 365-Produkte.
+- Bietet einen einzigen Endpunkt zur Microsoft-Welt.
+- Ermöglicht einfachen Zugriff auf Daten aus Diensten wie Excel, Microsoft
   Bookings, Microsoft Search, Microsoft Teams, OneDrive, OneNote,
   Outlook/Exchange, Planner, SharePoint, Workplace Analytics, Advanced Threat
   Analytics, Advanced Threat Protection, Azure Active Directory, Identity
-  Manager, Intune und vielen mehr...
+  Manager, Intune und mehr.
 
-Microsoft Graph ist das Gateway zu Daten und Informationen in Microsoft 365. Es
-bietet ein einheitliches Programmiermodell, mit dem Sie auf die enormen
-Datenmengen in Microsoft 365, Windows 10 und Enterprise Mobility + Security
-zugreifen können.
+Microsoft Graph ist das Gateway zu Daten und Informationen in Microsoft 365.
+Es bietet ein einheitliches Programmiermodell, mit dem du auf die umfangreichen
+Daten in Microsoft 365, Windows 10 und Enterprise Mobility + Security zugreifen
+kannst.
 
 ![ms-graph](https://docs.microsoft.com/en-us/graph/images/edugraph.png)
+
+### Wichtigste Funktionen
+
+- Integriere Microsoft 365 (Mail, Kalender, Teams, OneDrive, SharePoint) mit
+  einem einzigen Konnektor.
+- Sende E-Mails und erstelle Kalendereinträge direkt aus deinen Axon Ivy-
+  Prozessen.
+- Lade Dateien hoch und verwalte sie auf SharePoint/OneDrive; greife auf
+  zuletzt verwendete Dateien zu.
+- Lese und poste Microsoft Teams-Nachrichten und sende Teams-Benachrichtigungen.
+- Erstelle und verwalte Microsoft To Do-Aufgaben.
+- Sichere Authentifizierung via Azure AD OAuth2 mit flexiblen App- oder
+  Benutzer-Workflows; OpenAPI-Unterstützung für erweiterte API-Nutzung.
 
 ## Demo
 

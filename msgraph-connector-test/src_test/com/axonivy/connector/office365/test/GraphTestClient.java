@@ -13,7 +13,7 @@ import ch.ivyteam.ivy.rest.client.security.CsrfHeaderFeature;
 
 public class GraphTestClient {
 
-  public static final UUID GRAPH_CLIENT_ID = UUID.fromString("007036dc-72d1-429f-88a7-ba5d5cf5ae58");
+  public static final UUID GRAPH_CLIENT_ID = UUID.fromString(System.getProperty("test.azure.app.id"));
   
   public static void configureFixture(AppFixture fixture) {
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);

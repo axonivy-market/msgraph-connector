@@ -32,7 +32,7 @@ class TestCalendarDemo {
     bpmClient.mock()
             .element(BpmElement.pid("176D21535A8FEE20-f20"))
             .withNoAction();
-	assertThat(System.getProperty("test.azure.app.id")).isEqualTo(GraphTestClient.GRAPH_CLIENT_ID.toString());
+    assertThat(System.getProperty("test.azure.app.id")).isNotBlank();
     ExecutionResult result = bpmClient.start()
             .process("Demo/ms365Calendar/readCalendar.ivp")
             .as().session(session)

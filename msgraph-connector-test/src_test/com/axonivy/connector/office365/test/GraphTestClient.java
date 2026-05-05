@@ -22,6 +22,7 @@ public class GraphTestClient {
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.scope", "user.read calendars.read");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
   }
 
   public static void configureFixture(WebAppFixture fixture) {
@@ -31,5 +32,6 @@ public class GraphTestClient {
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.scope", "user.read calendars.read");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
   }
 }

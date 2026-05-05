@@ -18,23 +18,23 @@ public class GraphTestClient {
   
   public static void configureFixture(AppFixture fixture) {
 	System.setProperty("test.azure.app.id", GRAPH_CLIENT_ID.toString());
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
-//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Url", GraphServiceMock.URI);
+//    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Features",
 //        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.secretKey", "1");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.scope", "user.read calendars.read");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
   }
 
   public static void configureFixture(WebAppFixture fixture) {
 	System.setProperty("test.azure.app.id", GRAPH_CLIENT_ID.toString());
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
-//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Url", GraphServiceMock.URI);
+//    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Features",
 //        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.secretKey", "1");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.scope", "user.read calendars.read");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
   }
 }

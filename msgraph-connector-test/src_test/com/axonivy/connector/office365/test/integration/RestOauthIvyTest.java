@@ -27,7 +27,7 @@ class RestOauthIvyTest{
   @Test
   @Disabled
   void callbackOauthRedirect() {
-	var restClient = Ivy.rest().client("Microsoft 365 (Partial Graph API)");
+	var restClient = Ivy.rest().client("Microsoft 365 (OData Service for namespace microsoft.graph)");
     String appId = Ivy.var().get("microsoftConnector.appId");
     String secret = Ivy.var().get("microsoftConnector.secretKey");
     String tenantId = Ivy.var().get("microsoftConnector.tenantId");

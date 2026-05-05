@@ -27,7 +27,7 @@ public class TestToDoDemo {
 
   @Test
   public void readList(BpmClient bpmClient, ISession session) {
-	  assertThat(System.getProperty("test.azure.app.id")).isNotBlank();
+	assertThat(System.getProperty("test.azure.app.id")).isNotBlank();
     bpmClient.mock()
             .element(BpmElement.pid("176F208BF8721ECC-f6"))
             .withNoAction();

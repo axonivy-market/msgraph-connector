@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.connector.office365.test.GraphTestClient;
-import com.axonivy.ivy.webtest.engine.WebAppFixture;
 
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
@@ -22,9 +21,8 @@ import msgraph.connector.NewMail;
 class TestMailDemo {
 
   @BeforeEach
-  void mockService(AppFixture fixture, WebAppFixture webFixture) {
+  void mockService(AppFixture fixture) {
     GraphTestClient.configureFixture(fixture);
-    GraphTestClient.configureFixture(webFixture);
   }
 
   @Test

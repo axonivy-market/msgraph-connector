@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.connector.office365.test.GraphTestClient;
-import com.axonivy.ivy.webtest.engine.WebAppFixture;
 import com.axonivy.wf.ext.notification.NewTaskAssignmentListener;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.microsoft.graph.GraphServiceMock;
@@ -25,9 +24,8 @@ import msgraph.teams.notification.TeamsNotifier;
 class TestTeamsNotificationDemo {
 
   @BeforeEach
-  void mockService(AppFixture fixture, WebAppFixture webFixture) {
+  void mockService(AppFixture fixture) {
     GraphTestClient.configureFixture(fixture);
-    GraphTestClient.configureFixture(webFixture);
   }
 
   @Test

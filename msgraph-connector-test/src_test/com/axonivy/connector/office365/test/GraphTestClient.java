@@ -19,19 +19,25 @@ public class GraphTestClient {
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
 //    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
 //        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
+    System.setProperty("test.azure.app.id", GRAPH_CLIENT_ID.toString());
+    System.setProperty("test.azure.app.secretKey", "1");
+    System.setProperty("test.azure.app.tenantId", "mock");
   }
 
   public static void configureFixture(WebAppFixture fixture) {
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
 //    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
 //        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID.toString());
+    System.setProperty("test.azure.app.id", GRAPH_CLIENT_ID.toString());
+    System.setProperty("test.azure.app.secretKey", "1");
+    System.setProperty("test.azure.app.tenantId", "mock");
   }
 }

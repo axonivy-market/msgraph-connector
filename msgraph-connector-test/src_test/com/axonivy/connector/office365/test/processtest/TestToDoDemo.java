@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.connector.office365.test.GraphTestClient;
+import com.axonivy.ivy.webtest.engine.WebAppFixture;
 import com.microsoft.graph.MicrosoftGraphTodoTask;
 
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
@@ -21,8 +22,9 @@ import msgraph.todo.demo.ToDoDemo;
 public class TestToDoDemo {
 
   @BeforeEach
-  void mockService(AppFixture fixture) {
+  void mockService(AppFixture fixture, WebAppFixture webFixture) {
     GraphTestClient.configureFixture(fixture);
+    GraphTestClient.configureFixture(webFixture);
   }
 
   @Test

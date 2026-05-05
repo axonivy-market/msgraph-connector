@@ -13,13 +13,14 @@ import ch.ivyteam.ivy.rest.client.security.CsrfHeaderFeature;
 
 public class GraphTestClient {
 
-  public static final UUID GRAPH_CLIENT_ID = UUID.fromString("aed54d4e-83e7-49a2-84d1-1225fabd1188");
+  public static final UUID GRAPH_CLIENT_ID = UUID.fromString("007036dc-72d1-429f-88a7-ba5d5cf5ae58");
 
   
   public static void configureFixture(AppFixture fixture) {
+	System.setProperty("test.azure.app.id", GRAPH_CLIENT_ID.toString());
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
-        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+//        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
@@ -27,9 +28,10 @@ public class GraphTestClient {
   }
 
   public static void configureFixture(WebAppFixture fixture) {
+	System.setProperty("test.azure.app.id", GRAPH_CLIENT_ID.toString());
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
-        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+//        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");

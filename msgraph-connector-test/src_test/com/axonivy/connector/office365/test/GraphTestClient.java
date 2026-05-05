@@ -17,8 +17,8 @@ public class GraphTestClient {
   
   public static void configureFixture(AppFixture fixture) {
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
-        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+//        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
@@ -27,8 +27,8 @@ public class GraphTestClient {
 
   public static void configureFixture(WebAppFixture fixture) {
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", GraphServiceMock.URI);
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
-        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
+//    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+//        List.of(JsonFeature.class.getName(), CsrfHeaderFeature.class.getName()));
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.baseUri", GraphAuthMock.URI);
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");

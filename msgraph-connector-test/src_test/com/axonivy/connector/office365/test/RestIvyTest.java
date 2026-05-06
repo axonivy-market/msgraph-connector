@@ -17,14 +17,14 @@ public class RestIvyTest {
   @BeforeEach
   void beforeEach(AppFixture fixture) {
     // Disable OAuth feature for mock rest service
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Features",
             "ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", "{ivy.app.baseurl}/api/graphMock");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Url", "{ivy.app.baseurl}/api/graphMock");
   }
 
   @Test
   public void restApi() {
-    var response = Ivy.rest().client("Microsoft 365 (OData Service for namespace microsoft.graph)")
+    var response = Ivy.rest().client("Microsoft 365 (Partial Graph API)")
             .path("/me").request().get().readEntity(MicrosoftGraphUser.class);
     assertThat(response.getMail()).isEqualTo("reguel.wermelinger@mailinator.com");
   }

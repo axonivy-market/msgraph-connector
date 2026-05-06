@@ -113,6 +113,9 @@
                 <includes>
                   <include>**/RestOauthIvyTest.java</include>
                 </includes>
+				<systemPropertyVariables>
+					<ivy.environment>_dev-axonivy</ivy.environment>
+				</systemPropertyVariables>
               </configuration>
             </execution>
             <execution>

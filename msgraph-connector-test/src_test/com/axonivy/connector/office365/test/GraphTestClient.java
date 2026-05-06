@@ -1,6 +1,5 @@
 package com.axonivy.connector.office365.test;
 
-import java.util.List;
 import java.util.UUID;
 
 import com.axonivy.ivy.webtest.engine.WebAppFixture;
@@ -18,8 +17,6 @@ public class GraphTestClient {
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.appId", "test-app-id");
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.scope", "user.read calendars.read");
-	fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Features",
-			"ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
   }
 
   public static void configureFixture(WebAppFixture fixture) {
@@ -28,7 +25,5 @@ public class GraphTestClient {
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.appId", "test-app-id");
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.AUTH.scope", "user.read calendars.read");
-	fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Features",
-			"ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
   }
 }

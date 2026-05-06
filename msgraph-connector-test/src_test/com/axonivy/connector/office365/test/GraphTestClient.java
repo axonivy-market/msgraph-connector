@@ -17,8 +17,8 @@ public class GraphTestClient {
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID);
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
-    	      List.of("ch.ivyteam.ivy.rest.client.mapper.JsonFeature"));
+	fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+			"ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
   }
 
   public static void configureFixture(WebAppFixture fixture) {
@@ -27,7 +27,7 @@ public class GraphTestClient {
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.appId", GRAPH_CLIENT_ID);
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.AUTH.secretKey", "1");
     fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Properties.scope", "user.read calendars.read");
-    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
-  	      List.of("ch.ivyteam.ivy.rest.client.mapper.JsonFeature"));
+	fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
+			"ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
   }
 }

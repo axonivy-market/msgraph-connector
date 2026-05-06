@@ -17,9 +17,9 @@ public class RestIvyTest {
   @BeforeEach
   void beforeEach(AppFixture fixture) {
     // Disable OAuth feature for mock rest service
-    fixture.config("RestClients.Microsoft 365 (OData Service for namespace microsoft.graph).Features",
+    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Features",
             "ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
-    fixture.config("RestClients.Microsoft 365 (OData Service for namespace microsoft.graph).Url", "{ivy.app.baseurl}/api/graphMock");
+    fixture.config("RestClients.'Microsoft 365 (OData Service for namespace microsoft.graph)'.Url", "{ivy.app.baseurl}/api/graphMock");
   }
 
   @Test

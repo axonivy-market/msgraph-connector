@@ -12,22 +12,22 @@ public class GraphTestClient {
 
   public static final String GRAPH_CLIENT_ID = "007036dc-72d1-429f-88a7-ba5d5cf5ae58";
   public static void configureFixture(AppFixture fixture) {
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Url", GraphServiceMock.URI);
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.AUTH.baseUri", GraphAuthMock.URI);
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.AUTH.appId", GRAPH_CLIENT_ID);
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.AUTH.secretKey", "1");
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.scope", "user.read calendars.read");
-	fixture.config("RestClients.Microsoft 365 (Partial Graph API).Features",
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Url", GraphServiceMock.URI);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.baseUri'", GraphAuthMock.URI);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.appId'", GRAPH_CLIENT_ID);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.secretKey'", "1");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.scope'", "user.read calendars.read");
+	fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Features",
 			"ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
   }
 
   public static void configureFixture(WebAppFixture fixture) {
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Url", GraphServiceMock.URI);
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.AUTH.baseUri", GraphAuthMock.URI);
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.AUTH.appId", GRAPH_CLIENT_ID);
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.AUTH.secretKey", "1");
-    fixture.config("RestClients.Microsoft 365 (Partial Graph API).Properties.scope", "user.read calendars.read");
-	fixture.config("RestClients.Microsoft 365 (Partial Graph API).Features",
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Url", GraphServiceMock.URI);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.baseUri'", GraphAuthMock.URI);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.appId'", GRAPH_CLIENT_ID);
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.secretKey'", "1");
+    fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Properties.'AUTH.scope'", "user.read calendars.read");
+	fixture.config("RestClients.'Microsoft 365 (Partial Graph API)'.Features",
 			"ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
   }
 }

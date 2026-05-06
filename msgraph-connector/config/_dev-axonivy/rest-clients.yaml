@@ -1,6 +1,6 @@
 RestClients:
   #This OData service is located at https://graph.microsoft.com/v1.0
-  Microsoft 365 (Partial Graph API):
+  Microsoft 365 (OData Service for namespace microsoft.graph):
     UUID: 007036dc-72d1-429f-88a7-ba5d5cf5ae58
     Url: '{ivy.app.baseurl}/api/graphMock'
     Icon: res:/webContent/icons/microsoft.png

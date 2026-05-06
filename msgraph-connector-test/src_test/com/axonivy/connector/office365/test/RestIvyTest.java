@@ -24,7 +24,7 @@ public class RestIvyTest {
 
   @Test
   public void restApi() {
-    var response = Ivy.rest().client(GraphTestClient.GRAPH_CLIENT_ID)
+    var response = Ivy.rest().client("Microsoft 365 (OData Service for namespace microsoft.graph)")
             .path("/me").request().get().readEntity(MicrosoftGraphUser.class);
     assertThat(response.getMail()).isEqualTo("reguel.wermelinger@mailinator.com");
   }

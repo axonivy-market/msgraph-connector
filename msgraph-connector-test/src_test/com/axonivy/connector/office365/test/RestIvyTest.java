@@ -24,7 +24,7 @@ public class RestIvyTest {
 
   @Test
   public void restApi() {
-    var response = Ivy.rest().client("Microsoft 365 (Partial Graph API)")
+    var response = Ivy.rest().client(GraphTestClient.GRAPH_CLIENT_ID)
             .path("/me").request().get().readEntity(MicrosoftGraphUser.class);
     assertThat(response.getMail()).isEqualTo("reguel.wermelinger@mailinator.com");
   }

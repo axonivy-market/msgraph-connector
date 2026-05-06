@@ -46,6 +46,7 @@ public class TestToDoDemo {
   @Test
   public void createTask(BpmClient bpmClient, ISession session) {
     mockTaskUi(bpmClient);
+    
     ExecutionResult result = bpmClient.start()
             .process("Demo/ms365ToDo/createTask.ivp")
             .as().session(session)

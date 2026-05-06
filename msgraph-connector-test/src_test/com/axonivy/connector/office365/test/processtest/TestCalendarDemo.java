@@ -32,6 +32,7 @@ class TestCalendarDemo {
     bpmClient.mock()
             .element(BpmElement.pid("176D21535A8FEE20-f20"))
             .withNoAction();
+    
     ExecutionResult result = bpmClient.start()
             .process("Demo/ms365Calendar/readCalendar.ivp")
             .as().session(session)
@@ -47,6 +48,7 @@ class TestCalendarDemo {
   @Test
   void createMeeting(BpmClient bpmClient, ISession session) {
     mockMeetingUi(bpmClient);
+    
     ExecutionResult result = bpmClient.start()
             .process("Demo/ms365Calendar/meet.ivp")
             .as().session(session)

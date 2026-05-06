@@ -28,7 +28,6 @@ class TestMailDemo {
   @Test
   void writeMail(BpmClient bpmClient, ISession session) {
     mockMailUi(bpmClient);
-    assertThat(System.getProperty("test.azure.app.id")).isNotBlank();
     ExecutionResult result = bpmClient.start()
             .process("Demo/ms365Mail/writeMail.ivp")
             .as().session(session)

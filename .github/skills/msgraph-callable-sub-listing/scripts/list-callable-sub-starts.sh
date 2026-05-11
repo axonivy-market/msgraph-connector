@@ -8,91 +8,23 @@ set -euo pipefail
 #   bash list-callable-sub-starts.sh './msgraph-connector/processes/*.p.json'
 #   bash list-callable-sub-starts.sh './**/*.p.json' docs/callable-sub-starts.md
 
+SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.."; pwd)"
+LIB_DIR="$SKILL_DIR/lib"
+
+if [ ! -d "$LIB_DIR" ] || [ -z "$(ls -A "$LIB_DIR" 2>/dev/null)" ]; then
+  echo "First run: downloading Jackson jars..." >&2
+  mvn dependency:copy-dependencies \
+    -f "$SKILL_DIR/pom.xml" \
+    -DoutputDirectory="$LIB_DIR" \
+    -Dmdep.includeScope=runtime \
+    -q
+fi
+
 GLOB_PATTERN="${1:-./**/*.p.json}"
 OUTPUT_FILE="${2:-}"
 
-if ! command -v jq >/dev/null 2>&1; then
-  echo "Error: jq is required but not installed." >&2
-  exit 1
-fi
-
-# Build file list from the provided glob using find fallback.
-# Supports simple usage where caller provides either './**/*.p.json' or a direct path prefix.
-if [[ "$GLOB_PATTERN" == "./**/*.p.json" ]]; then
-  mapfile -d '' files < <(find . -type f -name '*.p.json' -print0 | sort -z)
+if [[ -n "$OUTPUT_FILE" ]]; then
+  java --class-path "$LIB_DIR/*" "$SKILL_DIR/ListCallableSubStarts.java" "$GLOB_PATTERN" "$OUTPUT_FILE"
 else
-  # Use shell glob expansion when a custom glob/path is passed.
-  shopt -s globstar nullglob
-  expanded=( $GLOB_PATTERN )
-  shopt -u globstar nullglob
-  files=()
-  for f in "${expanded[@]:-}"; do
-    if [[ -f "$f" && "$f" == *.p.json ]]; then
-      files+=("$f")
-    fi
-  done
+  java --class-path "$LIB_DIR/*" "$SKILL_DIR/ListCallableSubStarts.java" "$GLOB_PATTERN"
 fi
-
-if [[ ${#files[@]} -eq 0 ]]; then
-  echo "No process files matched: $GLOB_PATTERN" >&2
-  exit 1
-fi
-
-# Render report to stdout first, then optionally write to file.
-{
-  echo "# Callable Sub Connector Starts"
-  echo
-
-  callable_count=0
-
-  for file in "${files[@]}"; do
-    kind=$(jq -r '.kind // empty' "$file")
-    if [[ "$kind" != "CALLABLE_SUB" ]]; then
-      continue
-    fi
-
-    callable_count=$((callable_count + 1))
-
-    echo "## $file"
-
-    start_count=$(jq '[.elements[]? | select(.type == "CallSubStart" and (((.tags // []) | map(if type == "string" then ascii_downcase else "" end)) | index("connector")))] | length' "$file")
-
-    if [[ "$start_count" -eq 0 ]]; then
-      echo "- No CallSubStart with tag connector"
-      echo
-      continue
-    fi
-
-    jq -r '
-      .elements[]?
-      | select(.type == "CallSubStart" and (((.tags // []) | map(if type == "string" then ascii_downcase else "" end)) | index("connector")))
-      | "- Signature: " + (.config.signature // "") + "\n"
-      + "  Input: "
-      + (if (.config.input // .config.parameter) then
-         ((((.config.input // .config.parameter).params // [])
-            | map((.name // "") + ": " + (.type // ""))
-            | join(", "))
-          | if . == "" then "none" else . end)
-        else "none" end) + "\n"
-      + "  Result: "
-      + (if .config.result then
-          (((.config.result.params // [])
-            | map((.name // "") + ": " + (.type // ""))
-            | join(", "))
-          | if . == "" then "none" else . end)
-        else "none" end)
-      + "\n"
-    ' "$file"
-
-    echo
-  done
-
-  if [[ "$callable_count" -eq 0 ]]; then
-    echo "No CALLABLE_SUB process files found."
-  fi
-} | if [[ -n "$OUTPUT_FILE" ]]; then
-      mkdir -p "$(dirname "$OUTPUT_FILE")"
-      tee "$OUTPUT_FILE"
-    else
-      cat
-    fi

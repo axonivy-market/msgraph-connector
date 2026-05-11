@@ -17,12 +17,24 @@ Generate a repeatable documentation listing from process files where:
 - Optional output file path. If omitted, print to stdout
 
 ## Procedure
-1. Ensure `jq` is available.
-2. Run the listing script:
+1. Ensure `java` (Java 25+) and `mvn` (Maven 3.x) are on `PATH`. No `jq` needed.
+2. Run the listing script (downloads Jackson jars on first run):
    - `bash ./.github/skills/msgraph-callable-sub-listing/scripts/list-callable-sub-starts.sh`
 3. For docs output, write to a file:
    - `bash ./.github/skills/msgraph-callable-sub-listing/scripts/list-callable-sub-starts.sh './**/*.p.json' docs/callable-sub-starts.md`
-4. Copy the generated Markdown section into product docs as needed.
+4. For JSON output (machine-readable, includes id/name/desc):
+   - `bash ./.github/skills/msgraph-callable-sub-listing/scripts/list-callable-sub-starts-json.sh`
+5. Copy the generated Markdown section into product docs as needed.
+
+## Implementation
+The scripts delegate to a single Java 25 source file (`ListCallableSubStarts.java`) at the skill root.
+Jackson jars are downloaded once into `lib/` via Maven on first run.
+Direct invocation (also works):
+```bash
+java --class-path ".github/skills/msgraph-callable-sub-listing/lib/*" \
+     .github/skills/msgraph-callable-sub-listing/ListCallableSubStarts.java \
+     [<glob>] [<output-file>] [--json]
+```
 
 ## Output Shape
 The script outputs Markdown grouped by process file and includes:

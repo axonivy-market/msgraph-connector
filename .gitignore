@@ -16,3 +16,6 @@ lib/mvn-deps/
 logs/
 src_dataClasses/
 src_wsproc/
+
+# skill: downloaded Jackson jars
+.github/skills/msgraph-callable-sub-listing/lib/

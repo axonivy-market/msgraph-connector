@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>skill</groupId>
+    <artifactId>msgraph-callable-sub-listing</artifactId>
+    <version>1.0</version>
+
+    <dependencies>
+        <!-- jackson-databind transitively brings jackson-core and jackson-annotations -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.18.3</version>
+        </dependency>
+    </dependencies>
+</project>

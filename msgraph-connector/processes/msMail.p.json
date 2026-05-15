@@ -113,5 +113,46 @@
       "connect" : [
         { "id" : "f3", "to" : "f1" }
       ]
+    }, {
+      "id" : "f15",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 512, "y" : 176 }
+      }
+    }, {
+      "id" : "f16",
+      "type" : "RestClientCall",
+      "name" : "Authenticate",
+      "config" : {
+        "target" : {
+          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "path" : "/me"
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphUser"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 280, "y" : 176 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f15" }
+      ]
+    }, {
+      "id" : "f18",
+      "type" : "CallSubStart",
+      "name" : "getMe()",
+      "config" : {
+        "signature" : "getMe"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 176 },
+        "icon" : "http://localhost:8082/designer/faces/javax.faces.resource/icons/microsoft.png?ln=xpertivy-2-webContent"
+      },
+      "connect" : [
+        { "id" : "f19", "to" : "f16" }
+      ]
     } ]
 }

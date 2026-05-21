@@ -1,17 +1,15 @@
 package com.microsoft.graph;
 
-import java.util.UUID;
-
 import javax.ws.rs.client.WebTarget;
 
 import ch.ivyteam.ivy.environment.Ivy;
 
 public class MsGraph {
-
+  private static final String REST_CLIENT_NAME = "Microsoft365";
   private final WebTarget client;
 
   public MsGraph() {
-    client = Ivy.rest().client(UUID.fromString("007036dc-72d1-429f-88a7-ba5d5cf5ae58"));
+    client = Ivy.rest().client(REST_CLIENT_NAME);
   }
 
   public WebTarget client() {

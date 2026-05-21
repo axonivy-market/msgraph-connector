@@ -1,170 +1,75 @@
 # Microsoft Graph Connector
+The Microsoft Graph connector integrates Microsoft 365 services into Axon Ivy, enabling processes to send emails, manage calendars, upload files to SharePoint, handle ToDo tasks, and interact with Teams chats. It provides pre-built callable subs and a Microsoft Graph OpenAPI-backed REST client to access Mail, Calendar, Files, ToDo and Chat features.
 
-The Microsoft Graph Connector from Axon Ivy helps you connect your business processes with Microsoft 365 services such as Mail, Calendar, To Do, SharePoint files, and Teams chat. You can reuse ready-to-run connector processes to automate common collaboration tasks with less custom integration effort.
+This connector:
 
-[Microsoft Graph overview](https://learn.microsoft.com/en-us/graph/overview)
-
-[Microsoft Graph API reference](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0)
-
-### Key features
-
-- Automate everyday Microsoft 365 actions directly from your process workflows, so teams can work faster with less manual handoff.
-- Send emails with structured recipients, subject, and body data from your process context.
-- Read upcoming calendar events and create meetings programmatically for scheduling workflows.
-- Sync tasks with Microsoft To Do by reading all tasks and creating new tasks from process data.
-- Work with files and sites by uploading documents and listing recently used files in Microsoft 365.
-- Read recent Teams chat messages and build notification-enabled collaboration scenarios.
+- Send emails and manage recipients directly from your processes.
+- Create and manage calendar events with attendee support.
+- Upload and manage files on SharePoint sites from workflows.
+- Read and create ToDo tasks to integrate task management.
+- Access recent chats and messages for Teams notifications and integrations.
+- Use Microsoft Graph OpenAPI-backed REST clients for consistent API access.
 
 ## Demo
 
-Check the demo implementations provided in this repository:
-
-- [Graph Calendar](../msgraph-calendar/README.md)
-- [Graph Mail](../msgraph-mail/README.md)
-- [Graph ToDo](../msgraph-todo/README.md)
-- [Graph Chat](../msgraph-chat/README.md)
+Check the demo implementations provided for Mail, Calendar, ToDo, Chat and SharePoint under the demo modules.
 
 ### Demo workflows
 
-#### Mail Demo (msgraph-mail-demo)
-
-##### Inbox
-
-1. Launch the Inbox demo process.
-2. The process authenticates against Microsoft Graph and opens the mail dialog.
-3. Review the listed messages and validate that mailbox data is available.
+#### Mail (msgraph-mail-demo)
 
 ##### Write Mail
 
-1. Launch the Write Mail demo process.
-2. Fill in recipients, subject, and message content in the dialog.
-3. Submit the form to send the message through Microsoft Graph.
-4. Confirm that the message was processed successfully.
+1. Launch the WriteMail demo from the demo menu.
+2. A dialog opens to compose a new email.
+3. Fill in recipients, subject, and body, then send.
+4. Check your mailbox for the sent message.
 
-#### Calendar Demo (msgraph-calendar-demo)
+#### Calendar (msgraph-calendar-demo)
 
-##### Read Calendar
+##### Upcoming Events
 
-1. Launch the Read Calendar demo process.
-2. The process loads upcoming events from your Microsoft 365 calendar.
-3. Review the event list in the dialog to verify calendar connectivity.
+1. Launch the Upcoming Events demo from the demo menu.
+2. The connector reads events from your calendar and displays them in a list.
+3. Optionally create a meeting using the Create Meeting dialog.
+4. Review the meeting in your calendar.
 
-##### Meet
+#### ToDo (msgraph-todo-demo)
 
-1. Launch the Meet demo process.
-2. Enter meeting details in the create-event dialog.
-3. Submit the form to create a new calendar event.
-4. Verify the created event in the resulting event list.
+##### Manage Tasks
 
-#### ToDo Demo (msgraph-todo-demo)
+1. Launch the Manage Tasks demo from the demo menu.
+2. View existing ToDo tasks and create new ones.
+3. Fill in task details and save.
+4. Verify the new task appears in your ToDo list.
 
-##### My ToDo
+#### SharePoint (msgraph-sharepoint-demo)
 
-1. Launch the My ToDo demo process.
-2. The process reads your current Microsoft To Do tasks.
-3. Review the returned tasks in the dialog.
+##### Upload Files
 
-##### Create Task
+1. Launch the Upload Files demo from the demo menu.
+2. Select or upload a file to SharePoint.
+3. Confirm upload and check the target site for the file.
+4. Optionally review recent files.
 
-1. Launch the Create Task demo process.
-2. Enter title and content for the new task.
-3. Submit the dialog to create the task in Microsoft To Do.
-4. Verify that the created task is returned in the result.
+#### Teams (msgraph-teams-demo)
 
-#### SharePoint Demo (msgraph-sharepoint-demo)
+##### Send Notification
 
-##### My Sites
-
-1. Launch the My Sites demo process.
-2. The process reads followed SharePoint sites from Microsoft 365.
-3. Check the logged output to confirm site access.
-
-##### Upload
-
-1. Launch the Upload demo process.
-2. A sample file is prepared automatically.
-3. The file is uploaded to SharePoint through the connector process.
-4. Confirm upload completion in the process result.
-
-##### Recent Files
-
-1. Launch the Recent Files demo process.
-2. The process reads recently used drive items.
-3. Check the output to verify retrieved file names.
-
-#### Teams Demo (msgraph-teams-demo)
-
-##### Read Messages
-
-1. Launch the Read Messages demo process.
-2. The process requests recent chat messages from your Teams chats.
-3. Review the output to confirm that message content is returned.
-
-##### Teams Web
-
-1. Launch the Teams Web demo process.
-2. The process authenticates the current user.
-3. The Teams dialog opens for interactive validation.
-
-##### MS Teams Task Notification
-
-1. Launch the MS Teams Task Notification demo process.
-2. The demo simulates a user mapping for local testing.
-3. A sample task event is triggered to demonstrate notification flow.
-4. Verify that the Teams notification scenario is executed.
+1. Launch the Teams Notification demo from the demo menu.
+2. Compose a message and select the target chat or channel.
+3. Send the message and verify delivery in Teams.
 
 ## Setup
 
 - **Roles:** Everybody (configured in config/roles.xml)
-- **OpenAPI:** Spec URL: https://graphexplorerapi.azurewebsites.net/openapi?tags=me.user,me.calendar,users.calendar,me.message,me.Actions,me.todo,me.site,sites.Actions,me.drive,me.chat,chats.chat,chats.chatMessage&openApiVersion=3&graphVersion=v1.0&format=yaml&style=PowerShell, Namespace: com.microsoft.graph
-
-Use the following setup to configure Azure access and run the connector processes.
-
-1. Register an application on Azure as described in the Microsoft Java tutorial: https://docs.microsoft.com/en-us/graph/tutorials/java?tutorial-step=2
-2. Navigate to `Overview` in the Azure menu and copy the `Application (client) ID` into `microsoftConnector.appId`.
-3. Navigate to `Authentication` in the Azure app menu.
-   3.1. Add a `Redirect URI` in the `Web` section.
-      - Axon Ivy callback pattern: `{scheme}://{host}:{port}/oauth2/callback`.
-      - Designer default callback: `http://localhost:8081/oauth2/callback`.
-      - Engine callback example: `https://my.workflows.ch/oauth2/callback`.
-
-      ![set-redirect](../../doc/img/azure_authCallback.png)
-
-4. Navigate to `Certificate & secrets` in the Azure app menu.
-   4.1. Create a new client secret with `New client secret`.
-
-      ![new-secret](../../doc/img/azure_createSecret.png)
-
-   4.2. Copy the generated secret value into `microsoftConnector.secretKey`.
-
-      ![copy-secret](../../doc/img/azure_copySecret.png)
-
-5. Navigate to `API Permissions` in the Azure app menu.
-   5.1. Add permissions via `Add a permission` > `Microsoft Graph` > `Delegated permissions`.
-   5.2. Grant each permission listed in your `variables.yaml` permissions property.
-
-      ![add-perms](../../doc/img/azure_addPermission.png)
-
-6. Start a connector or demo process and validate the Microsoft 365 connection.
+- **OpenAPI:** https://graphexplorerapi.azurewebsites.net/openapi?tags=me.user,me.calendar,users.calendar,me.message,me.Actions,me.todo,me.site,sites.Actions,me.drive,me.chat,chats.chat,chats.chatMessage&openApiVersion=3&graphVersion=v1.0&format=yaml&style=PowerShell  (Namespace: com.microsoft.graph)
 
 ### Variables
 
-In order to use this product you must configure multiple variables.
-
-Add the following block to your `config/variables.yaml` file of our 
-main Business Project that will make use of this product:
-
 ```
-@variables.yaml@ 
+@variables.yaml@
 ```
-
-Afterwards set the values as shown in the Azure App setup above.
-
-> [!NOTE]
-> The format of variable is changed from version 13.
-> E.g. 
-> The variable path `microsoft-connector` is renamed to `microsoftConnector`.
-> The variable path `teams-notification` is renamed to `teamsNotification`.
 
 ```yaml
 # yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
@@ -201,8 +106,8 @@ Variables:
     # permissions to request access to.
     # you may exclude or add some, as your azure administrator allows or restricts them.
     # for sharepoint-demos, the following must be added: Sites.Read.All Files.ReadWrite
-    permissions: "user.read Calendars.ReadWrite mail.readWrite mail.send Tasks.ReadWrite\\
-      \\ Chat.Read offline_access"
+    permissions: "user.read Calendars.ReadWrite mail.readWrite mail.send Tasks.ReadWrite\
+      \ Chat.Read offline_access"
     
     # this property specifies the library used to create and manage HTTP connections for Jersey client. 
     # it sets the connection provider class for the Jersey client.
@@ -211,18 +116,36 @@ Variables:
     connectorProvider: "org.glassfish.jersey.client.HttpUrlConnectorProvider"
 ```
 
-### Optional authentication and runtime sections
+1. Register an application on Azure as described in the Microsoft's Java Tutorial https://docs.microsoft.com/en-us/graph/tutorials/java?tutorial-step=2
+2. Navigate to `Overview` in the Azure App menu and copy the 'Application (client) ID' into your variable called `appId` within the `microsoftConnector` section.
+3. Navigate to `Authentication` in the Azure App menu.
+   3.1. Add a `Redirect URI` in the `Web` Section.
+      - Axon Ivy has an authentication callback URI which follows the pattern `{scheme}://{host}:{port}/oauth2/callback`. This URI must be registered in the Azure App.
+      - Consequently, for the Axon Ivy Designer this URI can always be set to the following value: `http://localhost:8081/oauth2/callback`
+      - For the Axon Ivy Engine, the URI must contain the full URI where your Engine is reachable plus the callback path. E.g.: `https://my.workflows.ch/oauth2/callback`
 
-You can enable optional runtime authentication modes through variables:
+      
+      ![set-redirect](../../doc/img/azure_authCallback.png)
 
-1. Set `microsoftConnector.useAppPermissions` to `true` to run with application permissions (tenant-level, non-user-delegated).
-2. Set `microsoftConnector.tenantId` to your Azure Directory tenant ID when app permissions are enabled.
-3. Enable `microsoftConnector.useUserPassFlow.enabled` only if you explicitly need technical user authentication.
-4. If user/password flow is enabled, provide `user` and `pass` securely and verify permission scopes before production use.
+4. Navigate to `Certificate & secrets` in the Azure App menu.
+   4.1. Create a new secret by pressing `New client secret` and select any validity period.
+   4.2. Copy the value of the generated secret into your variable called `secretKey` within the `microsoftConnector` section.
+
+   ![new-secret](../../doc/img/azure_createSecret.png)
+
+   ![copy-secret](../../doc/img/azure_copySecret.png)
+
+5. Navigate to `API Permissions` in the Azure App menu.
+   - Add permissions via `Add a permission` > `Microsoft Graph` > `Delegated permissions`.
+   - Grant each of the permissions outlined in the `permissions` block of your variables.yaml file.
+
+   ![add-perms](../../doc/img/azure_addPermission.png)
+
+6. Done. Start any process that connects with Microsoft 365.
 
 ## Components
 
-### Connector processes
+### Connector Processes
 
 #### msCalendar.p.json
 
@@ -230,28 +153,26 @@ You can enable optional runtime authentication modes through variables:
     - Input: (none)
     - Result:
         - `myEvents` (java.util.List<com.microsoft.graph.MicrosoftGraphEvent>) - List with upcoming events from your calendar
-    - Description: Reads upcoming events from your calendar.
 
 - **createMeeting(msgraph.connector.NewEvent evt) -> meeting: com.microsoft.graph.MicrosoftGraphEvent**
     - Input:
         - `evt` (msgraph.connector.NewEvent) - The new event that should be created in your calendar
     - Result:
         - `meeting` (com.microsoft.graph.MicrosoftGraphEvent) - The event that was created in your calendar
-    - Description: Creates a new meeting in your your calendar.
 
 #### msChat.p.json
 
 - **recentMessages() -> messages: java.util.List<com.microsoft.graph.MicrosoftGraphChatMessage>**
     - Input: (none)
     - Result:
-        - `messages` (java.util.List<com.microsoft.graph.MicrosoftGraphChatMessage>) - (no description)
+        - `messages` (java.util.List<com.microsoft.graph.MicrosoftGraphChatMessage>) - (none)
 
 #### msFiles.p.json
 
 - **uploadFile(java.io.File file, String siteId) -> (none)**
     - Input:
         - `file` (java.io.File) - file to upload unto sharepoint site
-        - `siteId` (String) - optional: GUID of a site, if empty the first site, that the user follows will be used
+        - `siteId` (String) - optional: GUID of a site, if empty the first site that the user follows will be used
     - Result: (none)
 
 - **uploadFile(java.io.File file) -> (none)**
@@ -271,7 +192,6 @@ You can enable optional runtime authentication modes through variables:
         - `mail` (msgraph.connector.NewMail) - The mail to send
     - Result:
         - `message` (com.microsoft.graph.MicrosoftGraphMessage) - The message that was sent
-    - Description: Sends a mail.
 
 #### msToDo.p.json
 
@@ -279,18 +199,46 @@ You can enable optional runtime authentication modes through variables:
     - Input: (none)
     - Result:
         - `tasks` (java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>) - List with all todo tasks
-    - Description: Reads all todo tasks.
 
 - **createNewTask(msgraph.connector.NewToDo task) -> todo: com.microsoft.graph.MicrosoftGraphTodoTask**
     - Input:
         - `task` (msgraph.connector.NewToDo) - The new todo task to create
     - Result:
         - `todo` (com.microsoft.graph.MicrosoftGraphTodoTask) - The created todo task
-    - Description: Creates a new todo task.
 
-### Form components
+### Form Components
 
-- No information was detected for this section.
+- **NewMail — Mail input data**
+  - **Namespace:** msgraph.connector
+  - **Component type:** Data Class
+  - **Fields:**
+     - `receivers` (java.util.List<String>) — (no description available)
+     - `subject` (String) — (no description available)
+     - `body` (String) — (no description available)
+
+- **NewEvent — Event input data**
+  - **Namespace:** msgraph.connector
+  - **Component type:** Data Class
+  - **Fields:**
+     - `participants` (java.util.List<String>) — (no description available)
+     - `subject` (String) — (no description available)
+     - `description` (String) — (no description available)
+
+- **NewToDo — ToDo input data**
+  - **Namespace:** msgraph.connector
+  - **Component type:** Data Class
+  - **Fields:**
+     - `title` (String) — (no description available)
+     - `content` (String) — (no description available)
+
+- **FilesData — File upload data**
+  - **Namespace:** msgraph.connector
+  - **Component type:** Data Class
+  - **Fields:**
+     - `upload` (java.io.File) — (no description available)
+     - `sites` (java.util.List<com.microsoft.graph.MicrosoftGraphSite>) — (no description available)
+     - `siteId` (String) — GUID
+     - `items` (java.util.List<com.microsoft.graph.MicrosoftGraphDriveItem>) — (no description available)
 
 ### Maven artifacts
 

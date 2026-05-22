@@ -1,6 +1,7 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/13.2.1/rest-clients.json
 RestClients:
   #This OData service is located at https://graph.microsoft.com/v1.0
-  Microsoft 365 (Partial Graph API):
+  Microsoft365PartialGraphAPI:
     UUID: 007036dc-72d1-429f-88a7-ba5d5cf5ae58
     Url: https://graph.microsoft.com/v1.0/
     Icon: res:/webContent/icons/microsoft.png

@@ -149,7 +149,7 @@
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 176 },
-        "icon" : "http://localhost:8082/designer/faces/javax.faces.resource/icons/microsoft.png?ln=xpertivy-2-webContent"
+        "icon" : "res:/webContent/icons/microsoft.png"
       },
       "connect" : [
         { "id" : "f19", "to" : "f16" }

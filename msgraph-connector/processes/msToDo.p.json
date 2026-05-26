@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "17844DC635AF15F4",
   "kind" : "CALLABLE_SUB",
   "description" : "Reads and creates todo tasks.",
@@ -48,7 +48,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/todo/lists"
         },
         "response" : {
@@ -72,7 +72,7 @@
       "name" : "Read Tasks",
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/todo/lists/{todoTaskList-id}/tasks",
           "templateParams" : {
             "todoTaskList-id" : "in.lists.get(0).id"
@@ -112,7 +112,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/todo/lists"
         },
         "response" : {
@@ -137,7 +137,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/todo/lists/{todoTaskList-id}/tasks",
           "templateParams" : {
             "todoTaskList-id" : "in.lists.get(0).id"

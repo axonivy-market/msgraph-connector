@@ -1,20 +1,22 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "FilesData",
   "namespace" : "msgraph.connector",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "upload",
-    "type" : "java.io.File"
+    "type" : "java.io.File",
+    "modifiers" : [ ]
   }, {
     "name" : "sites",
-    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphSite>"
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphSite>",
+    "modifiers" : [ ]
   }, {
     "name" : "siteId",
-    "type" : "String",
-    "comment" : "GUID"
+    "comment" : "GUID",
+    "modifiers" : [ ]
   }, {
     "name" : "items",
-    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphDriveItem>"
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphDriveItem>",
+    "modifiers" : [ ]
   } ]
 }

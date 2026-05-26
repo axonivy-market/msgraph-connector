@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "1783A266998C4015",
   "kind" : "CALLABLE_SUB",
   "description" : "Reads events from your calendar and creates new ones.",
@@ -63,7 +63,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/users/{user-id}/calendar/calendarView",
           "templateParams" : {
             "user-id" : "in.user.getId()"
@@ -107,7 +107,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me"
         },
         "response" : {
@@ -135,7 +135,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me"
         },
         "response" : {
@@ -168,7 +168,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/microsoft.graph.findMeetingTimes"
         },
         "body" : {
@@ -216,7 +216,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/users/{user-id}/calendar/events",
           "templateParams" : {
             "user-id" : "in.user.getId()"

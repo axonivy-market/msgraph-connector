@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "1783B782896F7AC3",
   "kind" : "CALLABLE_SUB",
   "description" : "Sends mails.",
@@ -64,7 +64,7 @@
       "name" : "My User Info",
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me"
         },
         "response" : {
@@ -94,7 +94,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/microsoft.graph.sendMail"
         },
         "body" : {
@@ -125,7 +125,7 @@
       "name" : "Authenticate",
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me"
         },
         "response" : {

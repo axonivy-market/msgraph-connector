@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "184AA087E474CB92",
   "config" : {
     "data" : "msgraph.teams.demo.Data"
@@ -87,7 +87,7 @@
       "name" : "/me",
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft-365-Partial-Graph-API",
           "path" : "/me"
         },
         "response" : {

@@ -1,13 +1,14 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "ToDoDemo",
   "namespace" : "msgraph.todo.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "todo",
-    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>"
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphTodoTask>",
+    "modifiers" : [ ]
   }, {
     "name" : "task",
-    "type" : "msgraph.connector.NewToDo"
+    "type" : "msgraph.connector.NewToDo",
+    "modifiers" : [ ]
   } ]
 }

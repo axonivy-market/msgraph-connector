@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "184A3CA3AEE93D9D",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -47,7 +47,7 @@
       ],
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/followedSites",
           "templateParams" : {
             "drive-id" : ""
@@ -115,7 +115,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/sites/{site-id}/drive/items/{parent-id}:/{filename}:/content",
           "templateParams" : {
             "site-id" : "in.siteId",
@@ -202,7 +202,7 @@
       "name" : "drive/recent",
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/drive/recent"
         },
         "response" : {

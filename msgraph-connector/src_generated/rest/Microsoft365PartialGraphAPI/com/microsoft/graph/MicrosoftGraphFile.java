@@ -23,7 +23,7 @@ import com.microsoft.graph.MicrosoftGraphHashes;
  * MicrosoftGraphFile
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-25T14:23:42.636858240+01:00[Europe/Zurich]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-25T14:23:42.636858240+01:00[Europe/Zurich]")
 public class MicrosoftGraphFile {
   @JsonProperty("hashes")
   private MicrosoftGraphHashes hashes = null;

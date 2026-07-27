@@ -25,7 +25,7 @@ import java.util.List;
  * Eventid1MicrosoftGraphForwardBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-25T14:23:42.636858240+01:00[Europe/Zurich]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-25T14:23:42.636858240+01:00[Europe/Zurich]")
 public class Eventid1MicrosoftGraphForwardBody {
   @JsonProperty("ToRecipients")
   private List<MicrosoftGraphRecipient> toRecipients = null;

@@ -31,12 +31,6 @@
       <version>${project.version}</version>
       <type>iar</type>
     </dependency>
-    <dependency>
-      <groupId>com.axonivy.connector.office365</groupId>
-      <artifactId>msgraph-teams-demo</artifactId>
-      <version>${project.version}</version>
-      <type>iar</type>
-    </dependency>
   </dependencies>
 
   <pluginRepositories>

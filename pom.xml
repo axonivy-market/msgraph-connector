@@ -13,8 +13,6 @@
     <module>msgraph-calendar-demo</module>
     <module>msgraph-todo-demo</module>
     <module>msgraph-sharepoint-demo</module>
-    <module>msgraph-teams-notification</module>
-    <module>msgraph-teams-demo</module>
     <module>msgraph-connector-test</module>
    
     <module>msgraph-connector-product</module>
@@ -22,7 +20,6 @@
     <module>msgraph-connector-product/products/msgraph-calendar</module>
     <module>msgraph-connector-product/products/msgraph-todo</module>
     <module>msgraph-connector-product/products/msgraph-mail</module>
-    <module>msgraph-connector-product/products/msgraph-chat</module>
    
     <module>msgraph-connector-app</module>
   </modules>

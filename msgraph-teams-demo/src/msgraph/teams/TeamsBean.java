@@ -1,17 +1,18 @@
 package msgraph.teams;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 
 import com.microsoft.graph.MicrosoftGraphChat;
 import com.microsoft.graph.MicrosoftGraphChatType;
 
-@ManagedBean
+@Named
 @ViewScoped
-public class TeamsBean {
+public class TeamsBean implements Serializable {
 
   private final TeamsMessagesDataModel model;
   private List<MicrosoftGraphChat> chats;

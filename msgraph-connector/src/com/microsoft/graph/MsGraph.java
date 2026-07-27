@@ -1,6 +1,6 @@
 package com.microsoft.graph;
 
-import javax.ws.rs.client.WebTarget;
+import jakarta.ws.rs.client.WebTarget;
 
 import ch.ivyteam.ivy.environment.Ivy;
 

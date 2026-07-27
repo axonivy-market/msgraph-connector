@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.MultivaluedMap;
 
 import org.junit.jupiter.api.Test;
 

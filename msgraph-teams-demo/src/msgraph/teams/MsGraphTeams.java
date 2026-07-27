@@ -1,7 +1,7 @@
 package msgraph.teams;
 
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.graph.MicrosoftGraphChatCollectionResponse;

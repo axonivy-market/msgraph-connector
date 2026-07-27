@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * DriveItemidMicrosoftGraphPreviewBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-25T14:23:42.636858240+01:00[Europe/Zurich]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-25T14:23:42.636858240+01:00[Europe/Zurich]")
 public class DriveItemidMicrosoftGraphPreviewBody {
   @JsonProperty("page")
   private String page = null;

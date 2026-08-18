@@ -1,16 +1,16 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "NewMail",
   "namespace" : "msgraph.connector",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "receivers",
-    "type" : "java.util.List<String>"
+    "type" : "java.util.List<String>",
+    "modifiers" : [ ]
   }, {
     "name" : "subject",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "body",
-    "type" : "String"
+    "modifiers" : [ ]
   } ]
 }

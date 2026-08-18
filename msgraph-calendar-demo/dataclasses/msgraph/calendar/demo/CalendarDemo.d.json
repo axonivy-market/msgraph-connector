@@ -1,16 +1,18 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "CalendarDemo",
   "namespace" : "msgraph.calendar.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "user",
-    "type" : "com.microsoft.graph.MicrosoftGraphUser"
+    "type" : "com.microsoft.graph.MicrosoftGraphUser",
+    "modifiers" : [ ]
   }, {
     "name" : "events",
-    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphEvent>"
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphEvent>",
+    "modifiers" : [ ]
   }, {
     "name" : "newEvent",
-    "type" : "msgraph.connector.NewEvent"
+    "type" : "msgraph.connector.NewEvent",
+    "modifiers" : [ ]
   } ]
 }

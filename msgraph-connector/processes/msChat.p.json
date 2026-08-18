@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "184A9D4A92C26C8E",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -42,7 +42,7 @@
       "name" : "my chats",
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/chats"
         },
         "response" : {
@@ -68,7 +68,7 @@
       "name" : "messages",
       "config" : {
         "target" : {
-          "clientId" : "007036dc-72d1-429f-88a7-ba5d5cf5ae58",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/chats/{chat-id}/messages",
           "templateParams" : {
             "chat-id" : "in.chatId"

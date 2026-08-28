@@ -1,0 +1,104 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-1.json",
+  "id" : "184A9D4A92C26C8E",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "msgraph.connector.ChatData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "recentMessages()",
+      "config" : {
+        "signature" : "recentMessages",
+        "result" : {
+          "params" : [
+            { "name" : "messages", "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphChatMessage>", "desc" : "" }
+          ],
+          "map" : {
+            "result.messages" : "in.messages"
+          }
+        }
+      },
+      "tags" : [
+        "connector"
+      ],
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "icon" : "res:/webContent/icons/microsoft.png"
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 536, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "my chats",
+      "config" : {
+        "target" : {
+          "clientId" : "Microsoft365PartialGraphAPI",
+          "path" : "/me/chats"
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphChatCollectionResponse",
+            "map" : {
+              "out.chats" : "result.value"
+            },
+            "code" : "out.chatId = out.chats.get(0).id;"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 248, "y" : 64 },
+        "icon" : "res:/webContent/icons/microsoft.png"
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "RestClientCall",
+      "name" : "messages",
+      "config" : {
+        "target" : {
+          "clientId" : "Microsoft365PartialGraphAPI",
+          "path" : "/me/chats/{chat-id}/messages",
+          "templateParams" : {
+            "chat-id" : "in.chatId"
+          },
+          "queryParams" : {
+            "$top" : "",
+            "$skip" : "",
+            "$search" : "",
+            "$filter" : "",
+            "$count" : "",
+            "$orderby" : "",
+            "$select" : "",
+            "$expand" : ""
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.microsoft.graph.MicrosoftGraphChatMessageCollectionResponse",
+            "map" : {
+              "out.messages" : "result.value"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 408, "y" : 64 },
+        "icon" : "res:/webContent/icons/microsoft.png"
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}

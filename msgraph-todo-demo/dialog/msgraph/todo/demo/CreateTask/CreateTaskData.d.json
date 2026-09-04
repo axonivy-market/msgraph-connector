@@ -4,6 +4,7 @@
   "namespace" : "msgraph.todo.demo.CreateTask",
   "fields" : [ {
     "name" : "task",
-    "type" : "msgraph.connector.NewToDo"
+    "type" : "msgraph.connector.NewToDo",
+    "modifiers" : [ ]
   } ]
 }

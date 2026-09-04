@@ -3,8 +3,10 @@
   "simpleName" : "GraphAboutMeDialogData",
   "namespace" : "com.axonivy.connector.office365.test.GraphAboutMeDialog",
   "fields" : [ {
-    "name" : "displayName"
+    "name" : "displayName",
+    "modifiers" : [ ]
   }, {
-    "name" : "mail"
+    "name" : "mail",
+    "modifiers" : [ ]
   } ]
 }

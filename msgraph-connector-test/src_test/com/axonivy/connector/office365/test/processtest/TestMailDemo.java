@@ -30,9 +30,9 @@ class TestMailDemo {
     mockMailUi(bpmClient);
 
     ExecutionResult result = bpmClient.start()
-            .process("Demo/ms365Mail/writeMail.ivp")
-            .as().session(session)
-            .execute();
+        .process("Demo/ms365Mail/writeMail.ivp")
+        .as().session(session)
+        .execute();
 
     assertThat(result.bpmError()).isNull();
   }
@@ -43,13 +43,13 @@ class TestMailDemo {
     mail.setSubject("Meet for Lunch?");
     mail.setBody("the new cafeteria is open");
     bpmClient.mock()
-            .element(BpmElement.pid("17F262FCF88E26A2-f14"))
-            .with((in, out) -> {
-              try {
-                in.set("mail", mail);
-              } catch (NoSuchFieldException ex) {
-              }
-            });
+        .element(BpmElement.pid("17F262FCF88E26A2-f14"))
+        .with((in, _) -> {
+          try {
+            in.set("mail", mail);
+          } catch (NoSuchFieldException ex) {
+          }
+        });
   }
 
 }

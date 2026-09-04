@@ -4,8 +4,10 @@
   "namespace" : "msgraph.mail.demo.WriteMail",
   "fields" : [ {
     "name" : "mail",
-    "type" : "msgraph.connector.NewMail"
+    "type" : "msgraph.connector.NewMail",
+    "modifiers" : [ ]
   }, {
-    "name" : "receiver"
+    "name" : "receiver",
+    "modifiers" : [ ]
   } ]
 }

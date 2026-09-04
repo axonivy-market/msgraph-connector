@@ -8,6 +8,10 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Objects;
 
+import org.apache.commons.io.IOUtils;
+
+import ch.ivyteam.ivy.bpm.error.BpmError;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.security.PermitAll;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -18,20 +22,13 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
-import org.apache.commons.io.IOUtils;
-
-import com.fasterxml.jackson.databind.JsonNode;
-
-import ch.ivyteam.ivy.bpm.error.BpmError;
-import io.swagger.v3.oas.annotations.Hidden;
+import tools.jackson.databind.JsonNode;
 
 @Path(GraphServiceMock.PATH_SUFFIX)
 @PermitAll
 @Hidden
 @SuppressWarnings("unused")
-public class GraphServiceMock
-{
+public class GraphServiceMock {
   static final String PATH_SUFFIX = "graphMock";
   // URI where this mock can be reached: to be referenced in tests that use it!
   public static final String URI = "{ivy.app.baseurl}/api/" + PATH_SUFFIX;
@@ -39,16 +36,14 @@ public class GraphServiceMock
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   @Path("me")
-  public String me()
-  {
+  public String me() {
     return load("json/me.json");
   }
 
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   @Path("me/messages")
-  public String messages()
-  {
+  public String messages() {
     return load("json/messages.json");
   }
 
@@ -56,27 +51,24 @@ public class GraphServiceMock
   @Path("users/{user-id}/calendar/calendarView")
   @Produces(MediaType.APPLICATION_JSON)
   public Response createEnvelope(
-    @PathParam("user-id") String userId,
-    @QueryParam("startDateTime") String start,
-    @QueryParam("endDateTime") String end)
-  {
+      @PathParam("user-id") String userId,
+      @QueryParam("startDateTime") String start,
+      @QueryParam("endDateTime") String end) {
     return Response.status(200)
-      .entity(load("json/calendarView.json"))
-      .build();
+        .entity(load("json/calendarView.json"))
+        .build();
   }
 
   @POST
   @Path("me/microsoft.graph.sendMail")
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response sendMail(JsonNode json)
-  {
-    String mailSubject = json.get("Message").get("subject").asText();
+  public Response sendMail(JsonNode json) {
+    String mailSubject = json.get("Message").get("subject").asString();
     String expect = "Meet for Lunch?";
-    if (!Objects.equals(mailSubject, expect))
-    {
+    if (!Objects.equals(mailSubject, expect)) {
       BpmError.create("test:assertion")
-      .withAttribute("expected", "subject:"+mailSubject+" \n:toBe:"+expect)
-      .throwError();
+          .withAttribute("expected", "subject:" + mailSubject + " \n:toBe:" + expect)
+          .throwError();
     }
     return Response.status(202).build();
   }
@@ -85,66 +77,60 @@ public class GraphServiceMock
   @Path("me/microsoft.graph.findMeetingTimes")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
-  public Response suggestMeeting(JsonNode json)
-  {
+  public Response suggestMeeting(JsonNode json) {
     return Response.ok()
-      .entity(load("json/suggestMeeting.json"))
-      .build();
+        .entity(load("json/suggestMeeting.json"))
+        .build();
   }
 
   @POST
   @Path("users/{user-id}/calendar/events")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
-  public Response newMeeting(@PathParam("user-id") String userId, JsonNode json)
-  {
+  public Response newMeeting(@PathParam("user-id") String userId, JsonNode json) {
     return Response.ok()
-      .entity(load("json/newMeeting.json"))
-      .header("userId", userId)
-      .build();
+        .entity(load("json/newMeeting.json"))
+        .header("userId", userId)
+        .build();
   }
 
   @GET
   @Path("me/todo/lists")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getLists()
-  {
+  public Response getLists() {
     return Response.ok()
-      .entity(load("json/toDoLists.json"))
-      .build();
+        .entity(load("json/toDoLists.json"))
+        .build();
   }
 
   @GET
   @Path("me/todo/lists/{list-id}/tasks")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getTasks(@PathParam("list-id") String id)
-  {
+  public Response getTasks(@PathParam("list-id") String id) {
     return Response.ok()
-      .entity(load("json/toDoTasks.json"))
-      .header("list-id", id)
-      .build();
+        .entity(load("json/toDoTasks.json"))
+        .header("list-id", id)
+        .build();
   }
 
   @POST
   @Path("me/todo/lists/{list-id}/tasks")
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response getTasks(@PathParam("list-id") String id, JsonNode newTask)
-  {
+  public Response getTasks(@PathParam("list-id") String id, JsonNode newTask) {
     return Response.ok()
-      .entity(newTask)
-      .header("id", id)
-      .build();
+        .entity(newTask)
+        .header("id", id)
+        .build();
   }
 
   @GET
   @Path("me/followedSites")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getFollowedSited()
-  {
+  public Response getFollowedSited() {
     return Response.ok()
-      .entity(load("json/followedSites.json"))
-      .build();
+        .entity(load("json/followedSites.json"))
+        .build();
   }
 
   @POST
@@ -152,49 +138,44 @@ public class GraphServiceMock
   @Consumes(MediaType.APPLICATION_OCTET_STREAM)
   @Produces(MediaType.APPLICATION_JSON)
   public Response uploadSharepoint(
-    @PathParam("site-id") String siteId,
-    @PathParam("parent-id") String parentId,
-    @PathParam("filename") String fileName,
-    byte[] payload
-  ) throws IOException
-  {
+      @PathParam("site-id") String siteId,
+      @PathParam("parent-id") String parentId,
+      @PathParam("filename") String fileName,
+      byte[] payload) throws IOException {
     var item = new MicrosoftGraphDriveItem();
     item.setName(fileName);
     String content = IOUtils.toString(new ByteArrayInputStream(payload), StandardCharsets.UTF_8);
     item.setContent(content);
     return Response.ok()
-      .entity(item)
-      .build();
+        .entity(item)
+        .build();
   }
 
   @GET
   @Path("me/drive/recent")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getRecentFiles()
-  {
+  public Response getRecentFiles() {
     return Response.ok()
-      .entity(load("json/recentFiles.json"))
-      .build();
+        .entity(load("json/recentFiles.json"))
+        .build();
   }
 
   @GET
   @Path("me/chats")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getMyChats()
-  {
+  public Response getMyChats() {
     return Response.ok()
-      .entity(load("json/chats.json"))
-      .build();
+        .entity(load("json/chats.json"))
+        .build();
   }
 
   @GET
   @Path("me/chats/{chat-id}/messages")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getChatMessages(@PathParam("chat-id") String chatId)
-  {
+  public Response getChatMessages(@PathParam("chat-id") String chatId) {
     return Response.ok()
-      .entity(load("json/chatMessages.json"))
-      .build();
+        .entity(load("json/chatMessages.json"))
+        .build();
   }
 
   public static Deque<JsonNode> CHATS = new ArrayDeque<>();
@@ -204,35 +185,29 @@ public class GraphServiceMock
   @Path("/chats")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
-  public Response createChat(JsonNode payload)
-  {
+  public Response createChat(JsonNode payload) {
     CHATS.add(payload);
     return Response.ok()
-      .entity(load("json/teams/chatCreated.json"))
-      .build();
+        .entity(load("json/teams/chatCreated.json"))
+        .build();
   }
 
   @POST
   @Path("/chats/{chat-id}/messages")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
-  public Response messageCreated(@PathParam("chat-id") String chatId, JsonNode message)
-  {
+  public Response messageCreated(@PathParam("chat-id") String chatId, JsonNode message) {
     MESSAGES.add(message);
     return Response.ok()
-      .entity(load("json/teams/messageCreated.json"))
-      .build();
+        .entity(load("json/teams/messageCreated.json"))
+        .build();
   }
 
-  private static String load(String path)
-  {
-    try(InputStream is = GraphServiceMock.class.getResourceAsStream(path))
-    {
+  private static String load(String path) {
+    try (InputStream is = GraphServiceMock.class.getResourceAsStream(path)) {
       return IOUtils.toString(is, StandardCharsets.UTF_8);
-    }
-    catch (IOException ex)
-    {
-      throw new RuntimeException("Failed to read resource: "+path);
+    } catch (IOException ex) {
+      throw new RuntimeException("Failed to read resource: " + path);
     }
   }
 }

@@ -4,8 +4,10 @@
   "namespace" : "msgraph.calendar.demo.CreateEvent",
   "fields" : [ {
     "name" : "event",
-    "type" : "msgraph.connector.NewEvent"
+    "type" : "msgraph.connector.NewEvent",
+    "modifiers" : [ ]
   }, {
-    "name" : "participant"
+    "name" : "participant",
+    "modifiers" : [ ]
   } ]
 }

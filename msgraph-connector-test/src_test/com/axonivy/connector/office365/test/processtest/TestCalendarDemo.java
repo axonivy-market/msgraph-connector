@@ -30,19 +30,19 @@ class TestCalendarDemo {
   @Test
   void readPersonal(BpmClient bpmClient, ISession session) {
     bpmClient.mock()
-            .element(BpmElement.pid("176D21535A8FEE20-f20"))
-            .withNoAction();
+        .element(BpmElement.pid("176D21535A8FEE20-f20"))
+        .withNoAction();
 
     ExecutionResult result = bpmClient.start()
-            .process("Demo/ms365Calendar/readCalendar.ivp")
-            .as().session(session)
-            .execute();
+        .process("Demo/ms365Calendar/readCalendar.ivp")
+        .as().session(session)
+        .execute();
 
     CalendarDemo cal = result.data().last();
     assertThat(cal.getEvents()).hasSize(1);
     MicrosoftGraphEvent wfUiReview = cal.getEvents().get(0);
     assertThat(wfUiReview.getSubject())
-            .contains("Workflow UI: Review");
+        .contains("Workflow UI: Review");
   }
 
   @Test
@@ -50,15 +50,15 @@ class TestCalendarDemo {
     mockMeetingUi(bpmClient);
 
     ExecutionResult result = bpmClient.start()
-            .process("Demo/ms365Calendar/meet.ivp")
-            .as().session(session)
-            .execute();
+        .process("Demo/ms365Calendar/meet.ivp")
+        .as().session(session)
+        .execute();
 
     CalendarDemo cal = result.data().last();
     assertThat(cal.getEvents()).hasSize(1);
     MicrosoftGraphEvent wfUiReview = cal.getEvents().get(0);
     assertThat(wfUiReview.getSubject())
-            .isEqualTo("Define digitalization roadmap");
+        .isEqualTo("Define digitalization roadmap");
   }
 
   private void mockMeetingUi(BpmClient bpmClient) {
@@ -67,13 +67,13 @@ class TestCalendarDemo {
     meet.setSubject("Define digitalization roadmap");
     meet.setDescription("go for more");
     bpmClient.mock()
-            .element(BpmElement.pid("176D21535A8FEE20-f13"))
-            .with((in, out) -> {
-              try {
-                out.set("newEvent", meet);
-              } catch (NoSuchFieldException ex) {
-              }
-            });
+        .element(BpmElement.pid("176D21535A8FEE20-f13"))
+        .with((_, out) -> {
+          try {
+            out.set("newEvent", meet);
+          } catch (NoSuchFieldException ex) {
+          }
+        });
 
     BpmElement calViewer = BpmElement.pid("176D21535A8FEE20-f11");
     bpmClient.mock().element(calViewer).withNoAction();

@@ -10,7 +10,7 @@ import jakarta.ws.rs.core.MultivaluedMap;
 import org.junit.jupiter.api.Test;
 
 import ch.ivyteam.ivy.environment.IvyTest;
-import ch.ivyteam.ivy.rest.client.FeatureConfig;
+import ch.ivyteam.ivy.rest.client.feature.FeatureConfig;
 
 @IvyTest
 public class TestOAuth2Feature {
@@ -130,7 +130,7 @@ public class TestOAuth2Feature {
   }
 
   private static FeatureConfig toConfig(Map<String, Object> props) {
-    return new FeatureConfig(p -> props.get(p), TestOAuth2Feature.class);
+    return FeatureConfig.of(p -> props.get(p), TestOAuth2Feature.class);
   }
 
   private static MultivaluedMap<String, String> toPayload(FeatureConfig config) {

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/process.json",
   "id" : "184A3B417FB584E7",
   "config" : {
     "data" : "msgraph.sites.demo.Data"
@@ -29,7 +29,7 @@
       "name" : "log sites",
       "config" : {
         "target" : {
-          "clientId" : "Microsoft-365-Partial-Graph-API",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me/followedSites",
           "queryParams" : {
             "$top" : "",

@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/process.json",
   "id" : "185F3CF9C3910C01",
   "config" : {
     "data" : "com.axonivy.connector.office365.test.Data"
@@ -29,7 +29,7 @@
       "name" : "Microsoft 365 (Partial Graph API)",
       "config" : {
         "target" : {
-          "clientId" : "Microsoft-365-Partial-Graph-API",
+          "clientId" : "Microsoft365PartialGraphAPI",
           "path" : "/me"
         },
         "response" : {

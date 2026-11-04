@@ -1,0 +1,14 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "MailData",
+  "namespace" : "msgraph.mail",
+  "fields" : [ {
+    "name" : "mail",
+    "type" : "msgraph.connector.NewMail",
+    "modifiers" : [ ]
+  }, {
+    "name" : "message",
+    "type" : "com.microsoft.graph.MicrosoftGraphMessage",
+    "modifiers" : [ ]
+  } ]
+}

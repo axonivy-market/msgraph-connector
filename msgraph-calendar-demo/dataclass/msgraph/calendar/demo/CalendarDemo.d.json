@@ -1,0 +1,18 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "CalendarDemo",
+  "namespace" : "msgraph.calendar.demo",
+  "fields" : [ {
+    "name" : "user",
+    "type" : "com.microsoft.graph.MicrosoftGraphUser",
+    "modifiers" : [ ]
+  }, {
+    "name" : "events",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphEvent>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "newEvent",
+    "type" : "msgraph.connector.NewEvent",
+    "modifiers" : [ ]
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "CreateTaskData",
+  "namespace" : "msgraph.todo.demo.CreateTask",
+  "fields" : [ {
+    "name" : "task",
+    "type" : "msgraph.connector.NewToDo",
+    "modifiers" : [ ]
+  } ]
+}

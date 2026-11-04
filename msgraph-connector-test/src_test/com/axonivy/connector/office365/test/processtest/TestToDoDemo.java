@@ -28,13 +28,13 @@ public class TestToDoDemo {
   @Test
   public void readList(BpmClient bpmClient, ISession session) {
     bpmClient.mock()
-            .element(BpmElement.pid("176F208BF8721ECC-f6"))
-            .withNoAction();
+        .element(BpmElement.pid("176F208BF8721ECC-f6"))
+        .withNoAction();
 
     ExecutionResult result = bpmClient.start()
-            .process("Demo/ms365ToDo/myToDo.ivp")
-            .as().session(session)
-            .execute();
+        .process("Demo/ms365ToDo/myToDo.ivp")
+        .as().session(session)
+        .execute();
     assertThat(result.http().redirectLocation()).isNotEmpty();
 
     ToDoDemo toDo = result.data().last();
@@ -48,9 +48,9 @@ public class TestToDoDemo {
     mockTaskUi(bpmClient);
 
     ExecutionResult result = bpmClient.start()
-            .process("Demo/ms365ToDo/createTask.ivp")
-            .as().session(session)
-            .execute();
+        .process("Demo/ms365ToDo/createTask.ivp")
+        .as().session(session)
+        .execute();
 
     ToDoDemo toDo = result.data().last();
     assertThat(toDo.getTodo()).hasSize(1);
@@ -63,12 +63,12 @@ public class TestToDoDemo {
     task.setTitle("Test task");
     task.setContent("This is a test task");
     bpmClient.mock()
-            .element(BpmElement.pid("176F208BF8721ECC-f11"))
-            .with((in, out) -> {
-              try {
-                in.set("task", task);
-              } catch (NoSuchFieldException ex) {
-              }
-            });
+        .element(BpmElement.pid("176F208BF8721ECC-f11"))
+        .with((in, _) -> {
+          try {
+            in.set("task", task);
+          } catch (NoSuchFieldException ex) {
+          }
+        });
   }
 }

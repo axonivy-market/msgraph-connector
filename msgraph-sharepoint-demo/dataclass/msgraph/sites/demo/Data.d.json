@@ -1,0 +1,14 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "Data",
+  "namespace" : "msgraph.sites.demo",
+  "fields" : [ {
+    "name" : "mySites",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphSite>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "file",
+    "type" : "File",
+    "modifiers" : [ ]
+  } ]
+}

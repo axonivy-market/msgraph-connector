@@ -1,0 +1,22 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "FilesData",
+  "namespace" : "msgraph.connector",
+  "fields" : [ {
+    "name" : "upload",
+    "type" : "java.io.File",
+    "modifiers" : [ ]
+  }, {
+    "name" : "sites",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphSite>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "siteId",
+    "comment" : "GUID",
+    "modifiers" : [ ]
+  }, {
+    "name" : "items",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphDriveItem>",
+    "modifiers" : [ ]
+  } ]
+}

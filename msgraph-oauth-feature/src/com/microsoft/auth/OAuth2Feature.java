@@ -3,17 +3,17 @@ package com.microsoft.auth;
 import java.net.URI;
 import java.util.Optional;
 
-import javax.ws.rs.Priorities;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.Feature;
-import javax.ws.rs.core.FeatureContext;
-import javax.ws.rs.core.Form;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
+import jakarta.ws.rs.Priorities;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.core.Feature;
+import jakarta.ws.rs.core.FeatureContext;
+import jakarta.ws.rs.core.Form;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriBuilder;
 
 import ch.ivyteam.ivy.bpm.error.BpmPublicErrorBuilder;
-import ch.ivyteam.ivy.rest.client.FeatureConfig;
+import ch.ivyteam.ivy.rest.client.feature.FeatureConfig;
 import ch.ivyteam.ivy.rest.client.oauth2.OAuth2BearerFilter;
 import ch.ivyteam.ivy.rest.client.oauth2.OAuth2RedirectErrorBuilder;
 import ch.ivyteam.ivy.rest.client.oauth2.OAuth2TokenRequester.AuthContext;
@@ -54,7 +54,7 @@ public class OAuth2Feature implements Feature{
 
   @Override
   public boolean configure(FeatureContext context) {
-    var config = new FeatureConfig(context.getConfiguration(), OAuth2Feature.class);
+    var config = FeatureConfig.of(context.getConfiguration(), OAuth2Feature.class);
     var graphUri = new OAuth2UriProperty(config, Property.AUTH_BASE_URI, Default.AUTH_URI);
     var oauth2 = new OAuth2BearerFilter(
       ctxt -> requestToken(ctxt, graphUri),

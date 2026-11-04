@@ -1,0 +1,12 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "Data",
+  "namespace" : "com.axonivy.connector.office365.test",
+  "fields" : [ {
+    "name" : "environment"
+  }, {
+    "name" : "displayName"
+  }, {
+    "name" : "mail"
+  } ]
+}

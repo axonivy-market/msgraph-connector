@@ -1,0 +1,17 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "ChatData",
+  "namespace" : "msgraph.connector",
+  "fields" : [ {
+    "name" : "chats",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphChat>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "chatId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "messages",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphChatMessage>",
+    "modifiers" : [ ]
+  } ]
+}

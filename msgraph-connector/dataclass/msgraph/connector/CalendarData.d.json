@@ -1,0 +1,26 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "CalendarData",
+  "namespace" : "msgraph.connector",
+  "fields" : [ {
+    "name" : "events",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphEvent>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "user",
+    "type" : "com.microsoft.graph.MicrosoftGraphUser",
+    "modifiers" : [ ]
+  }, {
+    "name" : "attendees",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphAttendee>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "meetTimes",
+    "type" : "java.util.List<com.microsoft.graph.MicrosoftGraphMeetingTimeSuggestion>",
+    "modifiers" : [ ]
+  }, {
+    "name" : "newEvent",
+    "type" : "com.microsoft.graph.MicrosoftGraphEvent",
+    "modifiers" : [ ]
+  } ]
+}

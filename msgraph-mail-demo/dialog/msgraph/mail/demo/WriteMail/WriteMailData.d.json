@@ -1,0 +1,13 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "WriteMailData",
+  "namespace" : "msgraph.mail.demo.WriteMail",
+  "fields" : [ {
+    "name" : "mail",
+    "type" : "msgraph.connector.NewMail",
+    "modifiers" : [ ]
+  }, {
+    "name" : "receiver",
+    "modifiers" : [ ]
+  } ]
+}

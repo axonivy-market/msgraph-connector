@@ -29,6 +29,13 @@
       </includes>    
       <outputDirectory>.</outputDirectory>
     </fileSet>
+    <fileSet>
+      <directory>target/components</directory>
+      <includes>
+        <include>*.json</include>
+      </includes>
+      <outputDirectory>components</outputDirectory>
+    </fileSet>
   </fileSets>
   <files>
     <file>

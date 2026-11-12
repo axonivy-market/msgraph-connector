@@ -47,6 +47,9 @@
                 <copy todir="${project.build.directory}">
                   <fileset dir="." includes="README*.md" />
                 </copy>
+                <copy todir="${project.build.directory}">
+                  <fileset dir="../../../msgraph-connector/target" includes="components/*.json" />
+                </copy>
                 <copy file="../../setup.md" tofile="${project.build.directory}/setup.md" />
                 <loadfile property="variables.yaml" srcFile="${variables.yaml.file}" encoding="UTF-8" />
                 <replace file="${project.build.directory}/setup.md" token="@variables.yaml@" value="${variables.yaml}" />
